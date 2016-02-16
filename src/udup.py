@@ -217,6 +217,31 @@ def add_high_confidence_edges(s,bigramcount):
 
 
 
+def add_all_edges(s):
+    #connect each word wwith w+1 and w-1
+    #this ensures connectedness
+    for h in s.nodes():
+        for d in s.nodes():
+            if h != d:
+                s.add_edge(h,d)
+    return s
+
+def manage_function_words(s):
+    """such as reducing their predisposition to be heads"""
+    for h in [x for x in s.nodes() if s.node[x]['cpostag'] in OPEN]:
+        for d in [x for x in s.nodes()[h-3:h+3] if s.node[x]['cpostag'] in CLOSED]:
+            if h != d:
+                s.add_edge(h,d)
+    return s
+
+
+def relate_content_words(s):
+    for h in [x for x in s.nodes() if s.node[x]['cpostag'] in OPEN]:
+        for d in [x for x in s.nodes() if s.node[x]['cpostag'] in OPEN and x !=h]:
+             s.add_edge(h,d)
+    return s
+
+
 
 
 
@@ -303,7 +328,7 @@ def main():
     parser.add_argument('--input', help="conllu file", default='/Users/hmartine/data/UD1.2/UD_English/en-ud-dev.conllu')
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
     parser.add_argument('--output', help="target file", type=Path,default="testout.conllu")
-    parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='rules')
+    parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='pagerank')
 
     args = parser.parse_args()
 
@@ -314,16 +339,22 @@ def main():
     headrules = pd.read_csv(args.posrules,'\t')
     cio = CoNLLReader()
     orig_treebank = cio.read_conll_u(args.input)
+    ref_treebank = cio.read_conll_u(args.input)
     modif_treebank = []
     if args.parsing_strategy == 'pagerank':
-        for s in orig_treebank:
+        for o,r in zip(orig_treebank,ref_treebank):
+            s = copy.copy(o)
             s.remove_edges_from(s.edges())
             s.remove_node(0) # From here and until tree reconstruction there is no symbolic root node, makes our life a bit easier
             s = add_all_edges(s)
             s = add_short_edges(s)
             s = add_verb_edges(s)
-            tree_decoding_algorithm(s,headrules)
+            s = manage_function_words(s)
+            s = relate_content_words(s)
+            s = tree_decoding_algorithm(s,headrules)
+            #print(get_scores(set(s.edges()),set(r.edges())))
             modif_treebank.append(s)
+        cio.write_conll(modif_treebank,args.output,conllformat='conllu', print_fused_forms=False,print_comments=False)
     else:
         posbigramcounter = count_pos_bigrams(orig_treebank)
         for s in orig_treebank:
