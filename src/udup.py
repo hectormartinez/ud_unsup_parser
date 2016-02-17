@@ -265,9 +265,14 @@ def add_short_edges(s):
             s.add_edge(n-1,n)
     return s
 
-def function_words():
-    #This step is irrelevant for UD I think
-    pass
+def add_head_rule_edges(s,headrules):
+    for h in s.nodes():
+        for d in [x for x in s.nodes() if x!=h]:
+            pos_h = s.node[h]['cpostag']
+            pos_d = s.node[d]['cpostag']
+            if not headrules[(headrules["head"]==pos_h) & (headrules["dep"]==pos_d)].empty:
+                s.add_edge(h,d)
+    return s
 
 
 def morphological_inequality():
@@ -291,9 +296,11 @@ def add_verb_edges(s):
 def tree_decoding_algorithm(s,headrules):
     #This is the algorithm in Fig 3 in Søgaard(2012).
     #TODO reconsider root-attachment after first iteration, it is non-UD
-    rankdict = nx.pagerank_numpy(s,alpha=0.95)
+
+    personalization = dict([[x,5] for x in s.nodes() if s.node[x]['cpostag'] in OPEN]+[[x,1] for x in s.nodes() if s.node[x]['cpostag'] not in OPEN])
+
+    rankdict = nx.pagerank_numpy(s,alpha=0.95,personalization=personalization)
     rankedindices=[k for k,v in Counter(rankdict).most_common()]
-    #Initialization
     pi = rankedindices
     H = set()
     D = set()
@@ -325,10 +332,11 @@ def tree_decoding_algorithm(s,headrules):
 
 def main():
     parser = argparse.ArgumentParser(description="""Convert conllu to conll format""")
-    parser.add_argument('--input', help="conllu file", default='/Users/hmartine/data/UD1.2/UD_English/en-ud-dev.conllu')
+    parser.add_argument('--input', help="conllu file", default='../data/en-ud-dev.conllu')
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
     parser.add_argument('--output', help="target file", type=Path,default="testout.conllu")
     parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='pagerank')
+    parser.add_argument('--steps', choices=['complete','neighbors'], nargs='+', default=[""])
 
     args = parser.parse_args()
 
@@ -346,15 +354,22 @@ def main():
             s = copy.copy(o)
             s.remove_edges_from(s.edges())
             s.remove_node(0) # From here and until tree reconstruction there is no symbolic root node, makes our life a bit easier
-            s = add_all_edges(s)
-            s = add_short_edges(s)
-            s = add_verb_edges(s)
-            s = manage_function_words(s)
-            s = relate_content_words(s)
+            if "complete" in args.steps:
+                s = add_all_edges(s)
+            if "neighbors" in args.steps:
+                s = add_short_edges(s)
+            if "verbs" in args.steps:
+                s = add_verb_edges(s)
+            if "function" in args.steps:
+                s = manage_function_words(s)
+            if "content" in args.steps:
+                s = relate_content_words(s)
+            if "headrule" in args.steps:
+                s = add_head_rule_edges(s,headrules)
             s = tree_decoding_algorithm(s,headrules)
             #print(get_scores(set(s.edges()),set(r.edges())))
             modif_treebank.append(s)
-        cio.write_conll(modif_treebank,args.output,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            cio.write_conll(modif_treebank,args.output,conllformat='conllu', print_fused_forms=False,print_comments=False)
     else:
         posbigramcounter = count_pos_bigrams(orig_treebank)
         for s in orig_treebank:

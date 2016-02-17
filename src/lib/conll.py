@@ -38,6 +38,7 @@ class DependencyTree(nx.DiGraph):
     def __init__(self):
         nx.DiGraph.__init__(self)
 
+
     def pathtoroot(self, child):
         path = []
         newhead = self.head_of(self, child)
@@ -406,7 +407,7 @@ class CoNLLReader(object):
                        rowmulti = [str(currentmulti.get(col, '_')) for col in columns]
                        print(u"\t".join(rowmulti),file=out)
                     print(u"\t".join(row), file=out)
-            print(u"\t".join(row),file=out)
+            #print(u"\t".join(row),file=out)
             # emtpy line afterwards
             print(u"", file=out)
 
