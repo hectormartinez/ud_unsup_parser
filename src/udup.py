@@ -336,7 +336,7 @@ def main():
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
     parser.add_argument('--output', help="target file", type=Path,default="testout.conllu")
     parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='pagerank')
-    parser.add_argument('--steps', choices=['complete','neighbors'], nargs='+', default=[""])
+    parser.add_argument('--steps', choices=['complete','neighbors','verbs','function','content','headrule'], nargs='+', default=[""])
 
     args = parser.parse_args()
 
@@ -354,8 +354,8 @@ def main():
             s = copy.copy(o)
             s.remove_edges_from(s.edges())
             s.remove_node(0) # From here and until tree reconstruction there is no symbolic root node, makes our life a bit easier
-            if "complete" in args.steps:
-                s = add_all_edges(s)
+            #if "complete" in args.steps:
+            s = add_all_edges(s)
             if "neighbors" in args.steps:
                 s = add_short_edges(s)
             if "verbs" in args.steps:
