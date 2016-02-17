@@ -4,5 +4,5 @@ do
     cd src
     python udup.py --steps $s
     cd ..
-    perl eval.pl -g data/en-ud-dev.conllu > $s.eval
+    perl eval.pl -g data/en-ud-dev.conllu -s src/testout.conllu > $s.eval
 done
