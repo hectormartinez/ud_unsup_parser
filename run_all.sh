@@ -1,5 +1,5 @@
 
-for s in 'verbs neighbors function''verbs neighbors' 'verbs function' 'neighbors' 'verbs' 'function' 'content' 'headrule'
+for s in 'verbs neighbors function' 'verbs neighbors' 'verbs function' 'neighbors' 'verbs' 'function' 'content' 'headrule'
 do
     cd src
     python udup.py --steps $s
