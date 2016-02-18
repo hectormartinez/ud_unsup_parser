@@ -297,7 +297,7 @@ def tree_decoding_algorithm(s,headrules):
     #This is the algorithm in Fig 3 in Søgaard(2012).
     #TODO reconsider root-attachment after first iteration, it is non-UD
 
-    personalization = dict([[x,5] for x in s.nodes() if s.node[x]['cpostag'] in OPEN]+[[x,1] for x in s.nodes() if s.node[x]['cpostag'] not in OPEN])
+    personalization = dict([[x,1] for x in s.nodes() if s.node[x]['cpostag'] in OPEN]+[[x,1] for x in s.nodes() if s.node[x]['cpostag'] not in OPEN])
 
     rankdict = nx.pagerank_numpy(s,alpha=0.95,personalization=personalization)
     rankedindices=[k for k,v in Counter(rankdict).most_common()]
