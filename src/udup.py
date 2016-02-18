@@ -296,13 +296,13 @@ def add_verb_edges(s):
 
 
 
-def tree_decoding_algorithm_content_and_function(s,headrules,reverse=True):
+def tree_decoding_algorithm_content_and_function(s,headrules,reverse):
     #This is the algorithm in Fig 3 in Søgaard(2012).
 
     personalization = dict([[x,5] for x in s.nodes() if s.node[x]['cpostag'] in OPEN]+[[x,1] for x in s.nodes() if s.node[x]['cpostag'] not in OPEN])
 
     if reverse:
-        rev_s = nx.DiGraph(s).reverse()
+        rev_s = nx.reverse(nx.DiGraph(s))
     else:
         rev_s = nx.DiGraph(s)
     rankdict = nx.pagerank_numpy(rev_s,alpha=0.95,personalization=personalization)
@@ -403,10 +403,10 @@ def main():
     parser = argparse.ArgumentParser(description="""Convert conllu to conll format""")
     parser.add_argument('--input', help="conllu file", default='../data/en-ud-div.conllu')
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
-    parser.add_argument('--output', help="target file", type=Path,default="testout.conllu")
+    parser.add_argument('--output', help="target file",default="testout.conllu")
     parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='pagerank')
     parser.add_argument('--steps', choices=['complete','neighbors','verbs','function','content','headrule'], nargs='+', default=[""])
-
+    parser.add_argument('--reverse', action='store_true',default=False)
     args = parser.parse_args()
 
     if sys.version_info < (3,0):
@@ -435,10 +435,17 @@ def main():
                 s = relate_content_words(s)
             if "headrule" in args.steps:
                 s = add_head_rule_edges(s,headrules)
-            s = tree_decoding_algorithm_content_and_function(s,headrules)
-            #print(get_scores(set(s.edges()),set(r.edges())))
+            s = tree_decoding_algorithm_content_and_function(s,headrules,args.reverse)
             modif_treebank.append(s)
-            cio.write_conll(modif_treebank,args.output,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            if args.reverse:
+                r = ".rev"
+            else:
+                r = ".norev"
+            outfile = Path(args.output +"_"+ "_".join(args.steps)+r+".conllu")
+            cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            outfile = Path(args.output)
+            cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+
     else:
         posbigramcounter = count_pos_bigrams(orig_treebank)
         for s in orig_treebank:
