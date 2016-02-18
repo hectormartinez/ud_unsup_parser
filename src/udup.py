@@ -401,7 +401,7 @@ def tree_decoding_algorithm(s,headrules):
 
 def main():
     parser = argparse.ArgumentParser(description="""Convert conllu to conll format""")
-    parser.add_argument('--input', help="conllu file", default='../data/en-ud-dev.conllu')
+    parser.add_argument('--input', help="conllu file", default='../data/en-ud-dov.conllu')
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
     parser.add_argument('--output', help="target file",default="testout.conllu")
     parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='pagerank')

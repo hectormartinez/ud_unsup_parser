@@ -4,7 +4,7 @@ do
     cd src
     python udup.py --steps $s --reverse
     cd ..
-    perl eval.pl -g data/en-ud-dev.conllu -s src/testout.conllu > "$s.pers.reverse.eval"
+    perl eval.pl -g data/en-ud-dov.conllu -s src/testout.conllu > "$s.pers.reverse.eval"
 done
 
 
@@ -14,5 +14,5 @@ do
     cd src
     python udup.py --steps $s
     cd ..
-    perl eval.pl -g data/en-ud-dev.conllu -s src/testout.conllu > "$s.pers.norev.eval"
+    perl eval.pl -g data/en-ud-dov.conllu -s src/testout.conllu > "$s.pers.norev.eval"
 done
