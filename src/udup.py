@@ -9,7 +9,7 @@ import argparse
 import sys, copy
 import networkx as nx
 import numpy as np
-from lib.conll import CoNLLReader
+from lib.conll import CoNLLReader, DependencyTree
 from pandas import pandas as pd
 
 OPEN="ADJ ADV INTJ NOUN PROPN VERB".split()
@@ -293,6 +293,74 @@ def add_verb_edges(s):
                 s.add_edge(v,n)
     return s
 
+
+
+
+def tree_decoding_algorithm_content_and_function(s,headrules,reverse=True):
+    #This is the algorithm in Fig 3 in Søgaard(2012).
+
+    personalization = dict([[x,5] for x in s.nodes() if s.node[x]['cpostag'] in OPEN]+[[x,1] for x in s.nodes() if s.node[x]['cpostag'] not in OPEN])
+
+    if reverse:
+        rev_s = nx.DiGraph(s).reverse()
+    else:
+        rev_s = nx.DiGraph(s)
+    rankdict = nx.pagerank_numpy(rev_s,alpha=0.95,personalization=personalization)
+    rankedindices=[k for k,v in Counter(rankdict).most_common()]
+    pi = rankedindices
+    H = set()
+    D = set()
+
+    contentindices = [x for x in rankedindices if s.node[x]['cpostag'] in OPEN]
+    functionindices =  [x for x in rankedindices if x not in contentindices]
+    for i in contentindices: #We attach elements from highest to lowest, i.e. the word with the highest PR will be the dependent of root
+        if len(H) == 0:
+            n_j_prime = 0
+        else:
+            n_j_prime_index_headrules = None
+            if not headrules.empty:
+                POS_i = s.node[i]['cpostag']
+                possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
+                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table]
+                if H_headrules:
+                    n_j_prime_index_headrules = np.argmin([abs(i - j) for j in sorted(H_headrules)]) #find the head of i
+                    n_j_prime=sorted(H_headrules)[n_j_prime_index_headrules]
+
+                if not n_j_prime_index_headrules:
+                    n_j_prime_index = np.argmin([abs(i - j) for j in sorted(H)]) #find the head of i
+                    n_j_prime=sorted(H)[n_j_prime_index]
+        D.add((n_j_prime,i))
+        H.add(i)
+        s.node[i]['lemma']=str(rankedindices.index(i))
+    for i in functionindices: #We attach elements from highest to lowest, i.e. the word with the highest PR will be the dependent of root
+        if len(H) == 0:
+            n_j_prime = 0
+        else:
+            n_j_prime_index_headrules = None
+            if not headrules.empty:
+                POS_i = s.node[i]['cpostag']
+                possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
+                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table]
+                if H_headrules:
+                    n_j_prime_index_headrules = np.argmin([abs(i - j) for j in sorted(H_headrules)]) #find the head of i
+                    n_j_prime=sorted(H_headrules)[n_j_prime_index_headrules]
+
+                if not n_j_prime_index_headrules:
+                    n_j_prime_index = np.argmin([abs(i - j) for j in sorted(H)]) #find the head of i
+                    n_j_prime=sorted(H)[n_j_prime_index]
+        D.add((n_j_prime,i))
+        s.node[i]['lemma']=str(rankedindices.index(i))
+
+    s.add_node(0,attr_dict={'form' :'ROOT', 'lemma' :'ROOT', 'cpostag' :'ROOT', 'postag' : 'ROOT'})
+    s.remove_edges_from(s.edges())
+    s.add_edges_from(D)
+    for h,d in s.edges():
+        s[h][d]['deprel'] = 'root' if h == 0 else 'dep'
+    return s
+
+
+
+
 def tree_decoding_algorithm(s,headrules):
     #This is the algorithm in Fig 3 in Søgaard(2012).
     #TODO reconsider root-attachment after first iteration, it is non-UD
@@ -321,7 +389,8 @@ def tree_decoding_algorithm(s,headrules):
                     n_j_prime_index = np.argmin([abs(i - j) for j in sorted(H)]) #find the head of i
                     n_j_prime=sorted(H)[n_j_prime_index]
         D.add((n_j_prime,i))
-        H.add(i)
+        if onlycontentheads and s.node[i]['cpostag'] in OPEN: #we only allow content words to be heads
+            H.add(i)
         s.node[i]['lemma']=str(rankedindices.index(i))
     s.add_node(0,attr_dict={'form' :'ROOT', 'lemma' :'ROOT', 'cpostag' :'ROOT', 'postag' : 'ROOT'})
     s.remove_edges_from(s.edges())
@@ -332,7 +401,7 @@ def tree_decoding_algorithm(s,headrules):
 
 def main():
     parser = argparse.ArgumentParser(description="""Convert conllu to conll format""")
-    parser.add_argument('--input', help="conllu file", default='../data/en-ud-dev.conllu')
+    parser.add_argument('--input', help="conllu file", default='../data/en-ud-div.conllu')
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
     parser.add_argument('--output', help="target file", type=Path,default="testout.conllu")
     parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='pagerank')
@@ -366,7 +435,7 @@ def main():
                 s = relate_content_words(s)
             if "headrule" in args.steps:
                 s = add_head_rule_edges(s,headrules)
-            s = tree_decoding_algorithm(s,headrules)
+            s = tree_decoding_algorithm_content_and_function(s,headrules)
             #print(get_scores(set(s.edges()),set(r.edges())))
             modif_treebank.append(s)
             cio.write_conll(modif_treebank,args.output,conllformat='conllu', print_fused_forms=False,print_comments=False)
