@@ -16,6 +16,8 @@ OPEN="ADJ ADV INTJ NOUN PROPN VERB".split()
 CLOSED="ADP AUX CONJ DET NUM PART PRON SCONJ".split()
 OTHER="PUNCT SYM X".split()
 
+CONTENT="ADJ NOUN PROPN VERB"
+FUNCTION="ADP AUX CONJ DET NUM PART PRON SCONJ PUNCT SYM X ADV".split(" ")
 #THE HEAD OF AN OPEN CLASS IS ONLY AN OPEN CLASS OR ROOT
 #THE HEAD OF A CLOSED CLASS IS AN OPEN CLASS
 #THE HEAD OF OTHER IS OPEN CLASS
@@ -299,7 +301,18 @@ def add_verb_edges(s):
 def tree_decoding_algorithm_content_and_function(s,headrules,reverse):
     #This is the algorithm in Fig 3 in Søgaard(2012).
 
-    personalization = dict([[x,5] for x in s.nodes() if s.node[x]['cpostag'] in OPEN]+[[x,1] for x in s.nodes() if s.node[x]['cpostag'] not in OPEN])
+    personalization = dict([[x,1] for x in s.nodes() if s.node[x]['cpostag'] in CONTENT]+[[x,1] for x in s.nodes() if s.node[x]['cpostag'] not in CONTENT])
+
+    ALLVERBS = sorted([n for n in s.nodes() if s.node[n]['cpostag']=='VERB'])
+    ALLCONTENT = sorted([n for n in s.nodes() if s.node[n]['cpostag'] in CONTENT])
+
+    if ALLVERBS:
+        personalization[ALLVERBS[0]]=5
+    elif ALLCONTENT:
+        personalization[ALLCONTENT[0]]=5
+
+
+
 
     if reverse:
         rev_s = nx.reverse(nx.DiGraph(s))
@@ -311,43 +324,49 @@ def tree_decoding_algorithm_content_and_function(s,headrules,reverse):
     H = set()
     D = set()
 
-    contentindices = [x for x in rankedindices if s.node[x]['cpostag'] in OPEN]
+    contentindices = [x for x in rankedindices if s.node[x]['cpostag'] in CONTENT]
     functionindices =  [x for x in rankedindices if x not in contentindices]
     for i in contentindices: #We attach elements from highest to lowest, i.e. the word with the highest PR will be the dependent of root
         if len(H) == 0:
             n_j_prime = 0
         else:
             n_j_prime_index_headrules = None
-            if not headrules.empty:
-                POS_i = s.node[i]['cpostag']
-                possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
-                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table]
-                if H_headrules:
-                    n_j_prime_index_headrules = np.argmin([abs(i - j) for j in sorted(H_headrules)]) #find the head of i
-                    n_j_prime=sorted(H_headrules)[n_j_prime_index_headrules]
+            POS_i = s.node[i]['cpostag']
+            possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
+            H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table]
 
-                if not n_j_prime_index_headrules:
-                    n_j_prime_index = np.argmin([abs(i - j) for j in sorted(H)]) #find the head of i
-                    n_j_prime=sorted(H)[n_j_prime_index]
+            if H_headrules:
+                n_j_prime_index_headrules = np.argmin([abs(i - j) for j in sorted(H_headrules)]) #find the head of i
+                n_j_prime=sorted(H_headrules)[n_j_prime_index_headrules]
+
+            if not n_j_prime_index_headrules:
+                n_j_prime_index = np.argmin([abs(i - j) for j in sorted(H)]) #find the head of i
+                n_j_prime=sorted(H)[n_j_prime_index]
         D.add((n_j_prime,i))
         H.add(i)
         s.node[i]['lemma']=str(rankedindices.index(i))
+
     for i in functionindices: #We attach elements from highest to lowest, i.e. the word with the highest PR will be the dependent of root
         if len(H) == 0:
             n_j_prime = 0
         else:
             n_j_prime_index_headrules = None
-            if not headrules.empty:
-                POS_i = s.node[i]['cpostag']
-                possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
-                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table]
-                if H_headrules:
-                    n_j_prime_index_headrules = np.argmin([abs(i - j) for j in sorted(H_headrules)]) #find the head of i
-                    n_j_prime=sorted(H_headrules)[n_j_prime_index_headrules]
+            POS_i = s.node[i]['cpostag']
 
-                if not n_j_prime_index_headrules:
-                    n_j_prime_index = np.argmin([abs(i - j) for j in sorted(H)]) #find the head of i
-                    n_j_prime=sorted(H)[n_j_prime_index]
+            possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
+
+            if POS_i in ["ADP","DET","AUX","SCONJ"]:
+                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table and h > i]
+            else:
+                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table]
+
+            if H_headrules:
+                n_j_prime_index_headrules = np.argmin([abs(i - j) for j in sorted(H_headrules)]) #find the head of i
+                n_j_prime=sorted(H_headrules)[n_j_prime_index_headrules]
+            else:
+            #if not n_j_prime_index_headrules:
+                n_j_prime_index = np.argmin([abs(i - j) for j in sorted(H)]) #find the head of i
+                n_j_prime=sorted(H)[n_j_prime_index]
         D.add((n_j_prime,i))
         s.node[i]['lemma']=str(rankedindices.index(i))
 
@@ -401,7 +420,7 @@ def tree_decoding_algorithm(s,headrules):
 
 def main():
     parser = argparse.ArgumentParser(description="""Convert conllu to conll format""")
-    parser.add_argument('--input', help="conllu file", default='../data/en-ud-dov.conllu')
+    parser.add_argument('--input', help="conllu file", default='../data/en-ud-dev.conllu')
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
     parser.add_argument('--output', help="target file",default="testout.conllu")
     parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='pagerank')
