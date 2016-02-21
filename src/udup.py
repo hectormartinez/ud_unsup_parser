@@ -22,7 +22,24 @@ FUNCTION="ADP AUX CONJ DET NUM PART PRON SCONJ PUNCT SYM X ADV".split(" ")
 #THE HEAD OF A CLOSED CLASS IS AN OPEN CLASS
 #THE HEAD OF OTHER IS OPEN CLASS
 
+RIGHTATTACHING = []
+LEFTATTACHING = []
+
 scorerdict = defaultdict(list)
+
+def fill_out_left_and_right_attach(bigramcounter):
+    if bigramcounter[("DET","NOUN")] +  bigramcounter[("DET","PROPN")] >  bigramcounter[("NOUN","DET")] +  bigramcounter[("PROPN","DET")]:
+        RIGHTATTACHING.append("DET")
+    else:
+        LEFTATTACHING.append("DET")
+
+    if bigramcounter[("ADP","NOUN")] +  bigramcounter[("ADP","PROPN")] + bigramcounter[("ADP","PRON")] >  bigramcounter[("NOUN","ADP")] +  bigramcounter[("PROPN","ADP")] +  bigramcounter[("PRON","ADP")]:
+        RIGHTATTACHING.append("ADP")
+    else:
+        LEFTATTACHING.append("ADP")
+
+
+
 
 def get_scores(predset,goldset):
     tp = len(predset.intersection(goldset))
@@ -437,6 +454,10 @@ def main():
     orig_treebank = cio.read_conll_u(args.input)
     ref_treebank = cio.read_conll_u(args.input)
     modif_treebank = []
+    posbigramcounter = count_pos_bigrams(orig_treebank)
+    for p in posbigramcounter.most_common():
+        print(p)
+    exit()
     if args.parsing_strategy == 'pagerank':
         for o,r in zip(orig_treebank,ref_treebank):
             s = copy.copy(o)
@@ -454,19 +475,18 @@ def main():
                 s = relate_content_words(s)
             if "headrule" in args.steps:
                 s = add_head_rule_edges(s,headrules)
-            s = tree_decoding_algorithm_content_and_function(s,headrules,args.reverse)
+            #s = tree_decoding_algorithm_content_and_function(s,headrules,args.reverse)
             modif_treebank.append(s)
             if args.reverse:
                 r = ".rev"
             else:
                 r = ".norev"
             outfile = Path(args.output +"_"+ "_".join(args.steps)+r+".conllu")
-            cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            #cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
             outfile = Path(args.output)
-            cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            #cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
 
     else:
-        posbigramcounter = count_pos_bigrams(orig_treebank)
         for s in orig_treebank:
             D = add_high_confidence_edges(s,posbigramcounter)
             modif_treebank.append(s)
