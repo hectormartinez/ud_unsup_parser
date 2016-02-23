@@ -23,13 +23,26 @@ LEFTATTACHING = []
 
 scorerdict = defaultdict(list)
 
+
+def get_head_direction(sentences):
+    D = Counter()
+    for s in sentences:
+        for h,d in s.edges():
+            if h != 0 and h > d:
+                D[s.node[d]['cpostag']+"_right"]+=1
+            else:
+                D[s.node[d]['cpostag']+"_left"]+=1
+    for k in sorted(D.keys()):
+        print(k,D[k])
+
 def fill_out_left_and_right_attach(bigramcounter):
     LEFTATTACHING.append("CONJ")
-    LEFTATTACHING.append("X")
-    RIGHTATTACHING.append("SCONJ")
-    RIGHTATTACHING.append("DET")
+    LEFTATTACHING.append("PUNCT")
+
     RIGHTATTACHING.append("AUX")
     RIGHTATTACHING.append("DET")
+    RIGHTATTACHING.append("SCONJ")
+
 
     if bigramcounter[("ADP","NOUN")] +  bigramcounter[("ADP","PROPN")] + bigramcounter[("ADP","PRON")] >  bigramcounter[("NOUN","ADP")] +  bigramcounter[("PROPN","ADP")] +  bigramcounter[("PRON","ADP")]:
         RIGHTATTACHING.append("ADP")
@@ -520,6 +533,7 @@ def main():
     #    print(p)
     #exit()
     p = multiprocessing.Pool(2)
+    get_head_direction(orig_treebank)
     if args.parsing_strategy == 'pagerank':
         for o,ref in zip(orig_treebank,ref_treebank):
             s = copy.copy(o)
@@ -537,17 +551,16 @@ def main():
                 s = relate_content_words(s)
             if "headrule" in args.steps:
                 s = add_head_rule_edges(s,headrules)
-            tree_decoding_algorithm_content_and_function(s,headrules,args.reverse)
+            #tree_decoding_algorithm_content_and_function(s,headrules,args.reverse)
             modif_treebank.append(s)
             if args.reverse:
                 r = ".rev"
             else:
                 r = ".norev"
-            print(s.edges())
             outfile = Path(args.output +"_"+ "_".join(args.steps)+r+".conllu")
             #cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
             outfile = Path(args.output)
-            cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            #cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
 
     else:
         for s in orig_treebank:
