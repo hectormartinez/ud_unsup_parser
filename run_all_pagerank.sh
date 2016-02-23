@@ -6,6 +6,6 @@ do
     cd src
     python udup.py --steps $s --input ../data/en-ud-dev.conllu
     cd ..
-    perl eval07.pl -g data/en-ud-dov.conllu -s src/testout.conllu > "$s.pers.reverse.eval"
+    perl eval07.pl -g data/en-ud-dev.conllu -s src/testout.conllu > "$s.pers.reverse.eval"
 done
 
