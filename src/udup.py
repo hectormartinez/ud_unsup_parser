@@ -38,6 +38,8 @@ def get_head_direction(sentences):
 def fill_out_left_and_right_attach(bigramcounter):
     LEFTATTACHING.append("CONJ")
     LEFTATTACHING.append("PUNCT")
+    LEFTATTACHING.append("PROPN")
+
 
     RIGHTATTACHING.append("AUX")
     RIGHTATTACHING.append("DET")

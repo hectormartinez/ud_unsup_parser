@@ -4,8 +4,8 @@
 for s in 'headrule' #'verbs neighbors function headrule' 'verbs neighbors' 'verbs function' 'neighbors' 'verbs' 'function' 'content'
 do
     cd src
-    python udup.py --steps $s --input ../data/en-ud-dev.conllu
+    python udup.py --steps $s --input ../data/en-ud-dov.conllu
     cd ..
-    perl eval07.pl -g data/en-ud-dev.conllu -s src/testout.conllu > "$s.pers.reverse.eval"
+    perl eval07.pl -g data/en-ud-dov.conllu -s src/testout.conllu > "$s.pers.reverse.eval"
 done
 
