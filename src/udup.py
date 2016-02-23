@@ -533,7 +533,6 @@ def main():
     #    print(p)
     #exit()
     p = multiprocessing.Pool(2)
-    get_head_direction(orig_treebank)
     if args.parsing_strategy == 'pagerank':
         for o,ref in zip(orig_treebank,ref_treebank):
             s = copy.copy(o)
@@ -551,7 +550,7 @@ def main():
                 s = relate_content_words(s)
             if "headrule" in args.steps:
                 s = add_head_rule_edges(s,headrules)
-            #tree_decoding_algorithm_content_and_function(s,headrules,args.reverse)
+            tree_decoding_algorithm_content_and_function(s,headrules,args.reverse)
             modif_treebank.append(s)
             if args.reverse:
                 r = ".rev"
