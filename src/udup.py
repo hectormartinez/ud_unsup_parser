@@ -1,4 +1,6 @@
 
+
+import multiprocessing
 from collections import defaultdict, Counter
 from itertools import islice
 from pathlib import Path
@@ -22,10 +24,12 @@ LEFTATTACHING = []
 scorerdict = defaultdict(list)
 
 def fill_out_left_and_right_attach(bigramcounter):
-    if bigramcounter[("DET","NOUN")] +  bigramcounter[("DET","PROPN")] >  bigramcounter[("NOUN","DET")] +  bigramcounter[("PROPN","DET")]:
-        RIGHTATTACHING.append("DET")
-    else:
-        LEFTATTACHING.append("DET")
+    LEFTATTACHING.append("CONJ")
+    LEFTATTACHING.append("X")
+    RIGHTATTACHING.append("SCONJ")
+    RIGHTATTACHING.append("DET")
+    RIGHTATTACHING.append("AUX")
+    RIGHTATTACHING.append("DET")
 
     if bigramcounter[("ADP","NOUN")] +  bigramcounter[("ADP","PROPN")] + bigramcounter[("ADP","PRON")] >  bigramcounter[("NOUN","ADP")] +  bigramcounter[("PROPN","ADP")] +  bigramcounter[("PRON","ADP")]:
         RIGHTATTACHING.append("ADP")
@@ -214,10 +218,10 @@ def add_high_confidence_edges(s,bigramcount):
                     D.update(T)
                     T = set()
 
-        elif pos_index_dict["ADJ"]:
-            adjroot = min(pos_index_dict["ADJ"])
+        elif pos_index_dict["ADJ"] or pos_index_dict["NOUN"]: #or pos_index_dict["PROPN"]:
+            adjroot = min(pos_index_dict["ADJ"]+pos_index_dict["NOUN"])#+pos_index_dict["PROPN"])
             T.add((0,adjroot))
-            scorerdict["ADJ_root"].append(get_scores(T,goldedgeset))
+            scorerdict["CONTENT_root"].append(get_scores(T,goldedgeset))
             D.update(T)
             T = set()
 
@@ -365,10 +369,6 @@ def tree_decoding_algorithm_content_and_function(s,headrules,reverse):
         personalization[ALLVERBS[0]]=5
     elif ALLCONTENT:
         personalization[ALLCONTENT[0]]=5
-
-
-
-
     if reverse:
         rev_s = nx.reverse(nx.DiGraph(s))
     else:
@@ -410,8 +410,10 @@ def tree_decoding_algorithm_content_and_function(s,headrules,reverse):
 
             possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
 
-            if POS_i in ["ADP","DET","AUX","SCONJ"]:
+            if POS_i in RIGHTATTACHING:# ["ADP","DET","AUX","SCONJ"]:
                 H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table and h > i]
+            elif POS_i in LEFTATTACHING:
+                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table and h < i]
             else:
                 H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table]
 
@@ -428,8 +430,28 @@ def tree_decoding_algorithm_content_and_function(s,headrules,reverse):
     s.add_node(0,attr_dict={'form' :'ROOT', 'lemma' :'ROOT', 'cpostag' :'ROOT', 'postag' : 'ROOT'})
     s.remove_edges_from(s.edges())
     s.add_edges_from(D)
+
+
+    #Make sure there are no full 0-attached sentences sentences
+
+    mainpred = sorted(s.successors(0))[0]
+    if len(s.successors(0)) > 1:
+        for other in sorted(s.successors(0))[1:]:
+            s.remove_edge(0,other)
+            s.add_edge(mainpred,other)
+
+    if s.node[max(s.nodes())]['cpostag'] == 'PUNCT':
+        lastperiod = max(s.nodes())
+        s.remove_edge(s.head_of(lastperiod),lastperiod)
+        s.add_edge(mainpred,lastperiod)
+
+    if s.node[1]['cpostag'] == 'PUNCT':
+        s.remove_edge(s.head_of(1),1)
+        s.add_edge(mainpred,1)
+
+
     for h,d in s.edges():
-        s[h][d]['deprel'] = 'root' if h == 0 else 'dep'
+        s[h][d]['deprel'] = 'root' #if h == 0 else 'dep'
     return s
 
 
@@ -469,6 +491,7 @@ def tree_decoding_algorithm(s,headrules):
     s.add_node(0,attr_dict={'form' :'ROOT', 'lemma' :'ROOT', 'cpostag' :'ROOT', 'postag' : 'ROOT'})
     s.remove_edges_from(s.edges())
     s.add_edges_from(D)
+
     for h,d in s.edges():
         s[h][d]['deprel'] = 'root' if h == 0 else 'dep'
     return s
@@ -496,8 +519,9 @@ def main():
     #for p in posbigramcounter.most_common():
     #    print(p)
     #exit()
+    p = multiprocessing.Pool(2)
     if args.parsing_strategy == 'pagerank':
-        for o,r in zip(orig_treebank,ref_treebank):
+        for o,ref in zip(orig_treebank,ref_treebank):
             s = copy.copy(o)
             s.remove_edges_from(s.edges())
             s.remove_node(0) # From here and until tree reconstruction there is no symbolic root node, makes our life a bit easier
@@ -513,16 +537,17 @@ def main():
                 s = relate_content_words(s)
             if "headrule" in args.steps:
                 s = add_head_rule_edges(s,headrules)
-            #s = tree_decoding_algorithm_content_and_function(s,headrules,args.reverse)
+            tree_decoding_algorithm_content_and_function(s,headrules,args.reverse)
             modif_treebank.append(s)
             if args.reverse:
                 r = ".rev"
             else:
                 r = ".norev"
+            print(s.edges())
             outfile = Path(args.output +"_"+ "_".join(args.steps)+r+".conllu")
             #cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
             outfile = Path(args.output)
-            #cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
 
     else:
         for s in orig_treebank:

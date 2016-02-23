@@ -393,6 +393,7 @@ class CoNLLReader(object):
                     head_i = sent.head_of(token_i)
                     token_dict['head'] = head_i
                     # print(head_i, token_i)
+
                     try:
                         token_dict['deprel'] = sent[head_i][token_i]['deprel']
                         token_dict['id'] = token_i
