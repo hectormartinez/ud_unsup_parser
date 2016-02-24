@@ -1,0 +1,1087 @@
+1	Mehed	mees+d	NOUN	n/com,pl,nom,%cap	Case=Nom|Number=Plur	3	nsubj	_	_
+2	on	ole+0	VERB	v/main,indic,pres,ps3,pl,ps,af	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	3	cop	_	_
+3	erinevad	erinev+d	ADJ	adj/pos,pl,nom	Case=Nom|Degree=Pos|Number=Plur	0	root	_	_
+4	ja	ja+0	CONJ	conj-c/crd	_	3	cc	_	_
+5	täidavad	täit+vad	VERB	v/main,indic,pres,ps3,pl,ps,af	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	3	conj	_	_
+6	eri	eri+0	ADJ	adj/pos	Degree=Pos	7	amod	_	_
+7	rolle	roll+e	NOUN	n/com,pl,part	Case=Par|Number=Plur	5	dobj	_	_
+8	.	--	PUNCT	punc/--	_	3	punct	_	_
+
+1	Lennart	Lennart+0	PROPN	prop/prop,sg,nom,%cap	Case=Nom|Number=Sing	6	nsubj	_	_
+2	omakorda	oma_korda+0	ADV	adv/--	_	6	advmod	_	_
+3	on	ole+0	AUX	v/aux,indic,pres,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	aux	_	_
+4	alati	alati+0	ADV	adv/--	_	6	advmod	_	_
+5	olnud	ole+nud	VERB	v/main,partic,past,ps	Tense=Past|VerbForm=Part	6	cop	_	_
+6	tugevam	tuge=vam+0	ADJ	adj/comp,sg,nom	Case=Nom|Degree=Cmp|Number=Sing	0	root	_	_
+7	poliitilise	poliitiline+0	ADJ	adj/pos,sg,gen	Case=Gen|Degree=Pos|Number=Sing	8	amod	_	_
+8	ämblikuvõrgu	ämbliku_võrk+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	9	nmod	_	_
+9	punumises	punu=mine+s	NOUN	n/com,sg,in,%mine	Case=Ine|Number=Sing	6	nmod	_	_
+10	.	--	PUNCT	punc/--	_	6	punct	_	_
+
+1	1991.	1991+0	NUM	num/ord,x?,digit	NumForm=Digit|NumType=Ord	2	nummod	_	_
+2	aasta	aasta+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	3	nmod	_	_
+3	putšipäevil	putši_päev+il	NOUN	n/com,pl,ad	Case=Ade|Number=Plur	4	nmod	_	_
+4	sulges	sulge+s	VERB	v/main,indic,impf,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+5	Savisaar	Savi_saar+0	PROPN	prop/prop,sg,nom,%cap	Case=Nom|Number=Sing	4	nsubj	_	_
+6	Rüütli	Rüütel+0	PROPN	prop/prop,sg,gen,%cap	Case=Gen|Number=Sing	4	dobj	_	_
+7	sõna	sõna+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	9	nmod	_	_
+8	otseses	otsene+s	ADJ	adj/pos,sg,in	Case=Ine|Degree=Pos|Number=Sing	9	amod	_	_
+9	mõttes	mõte+s	NOUN	n/com,sg,in	Case=Ine|Number=Sing	4	nmod	_	_
+10	Kadrioru	Kadri_org+0	PROPN	prop/prop,sg,gen,%cap	Case=Gen|Number=Sing	11	nmod	_	_
+11	lossi	loss+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	4	nmod	_	_
+12	luku	lukk+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	4	nmod	_	_
+13	taha	taha+0	ADP	prp/post,%gen	AdpType=Post	12	case	_	_
+14	ja	ja+0	CONJ	conj-c/crd	_	4	cc	_	_
+15	käskis	käski+s	VERB	v/main,indic,impf,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	4	conj	_	_
+16	tal	tema+l	PRON	pron/pers,ps3,sg,ad	Case=Ade|Number=Sing|Person=3|PronType=Prs	19	nmod	_	_
+17	seal	seal+0	ADV	adv/--	_	19	advmod	_	_
+18	paigal	paigal+0	ADV	adv/--	_	19	compound:prt	_	_
+19	püsida	püsi+da	VERB	v/main,inf	VerbForm=Inf	15	xcomp	_	_
+20	.	--	PUNCT	punc/--	_	4	punct	_	_
+
+1	Kaks	kaks+0	NUM	num/card,sg,nom,l,%cap	Case=Nom|Number=Sing|NumForm=Word|NumType=Card	3	nsubj	_	_
+2	meisterkonspiraatorit	meister_konspiraator+t	NOUN	n/com,sg,part	Case=Par|Number=Sing	1	nmod	_	_
+3	tegid	tege+id	VERB	v/main,indic,impf,ps3,pl,ps,af	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	ettevalmistusi	ette_valmistus+i	NOUN	n/com,pl,part	Case=Par|Number=Plur	3	dobj	_	_
+5	pimedas	pime+s	NOUN	n/com,sg,in	Case=Ine|Number=Sing	3	nmod	_	_
+6	ja	ja+0	CONJ	conj-c/crd	_	5	cc	_	_
+7	teki	tekk+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	5	conj	_	_
+8	all	all+0	ADP	prp/post,%gen	AdpType=Post	7	case	_	_
+9	,	--	PUNCT	punc/--	_	15	punct	_	_
+10	sest	sest+0	SCONJ	conj-s/sub	_	15	mark	_	_
+11	Arnold	Arnold+0	PROPN	prop/prop,sg,nom,%cap	Case=Nom|Number=Sing	15	nsubj	_	_
+12	ei	ei+0	AUX	v/aux,neg	Negative=Neg	15	neg	_	_
+13	tohtinud	tohti+nud	AUX	v/mod,indic,impf,ps,neg	Mood=Ind|Negative=Neg|Tense=Imp|VerbForm=Fin	15	aux	_	_
+14	midagi	miski+dagi	PRON	pron/indef,sg,part	Case=Par|Number=Sing|PronType=Ind,Neg	15	dobj	_	_
+15	aimata	aima+ta	VERB	v/main,inf	VerbForm=Inf	3	advcl	_	_
+16	.	--	PUNCT	punc/--	_	3	punct	_	_
+
+1	Samal	sama+l	PRON	pron/dem,sg,ad,%cap	Case=Ade|Number=Sing|PronType=Dem	2	nmod	_	_
+2	ajal	aeg+0	NOUN	n/com,sg,ad	Case=Ade|Number=Sing	8	nmod	_	_
+3	kui	kui+0	SCONJ	conj-s/sub	_	8	mark	_	_
+4	Toompeal	Toom_pea+l	PROPN	prop/prop,sg,ad,%cap	Case=Ade|Number=Sing	8	nmod	_	_
+5	presidendi	president+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	6	nmod	_	_
+6	õnnistuseks	õnnistus+ks	NOUN	n/com,sg,tr	Case=Tra|Number=Sing	8	nmod	_	_
+7	hümni	hümn+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	8	dobj	_	_
+8	mängiti	mängi+ti	VERB	v/main,indic,impf,imps,af	Mood=Ind|Negative=Pos|Tense=Imp|VerbForm=Fin	10	advcl	_	_
+9	,	--	PUNCT	punc/--	_	8	punct	_	_
+10	istus	istu+s	VERB	v/main,indic,impf,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+11	solvatud	solva=tud+0	ADJ	adj/pos,sg,nom,partic,%tud	Case=Nom|Degree=Pos|Number=Sing|VerbForm=Part	12	amod	_	_
+12	Arnold	Arnold+0	PROPN	prop/prop,sg,nom,%cap	Case=Nom|Number=Sing	10	nsubj	_	_
+13	üksi	üksi+0	ADV	adv/--	_	10	advmod	_	_
+14	oma	oma+0	PRON	pron/pos,sg,gen	Case=Gen|Number=Sing|Poss=Yes|PronType=Prs	16	nmod	_	_
+15	Kadrioru	Kadri_org+0	PROPN	prop/prop,sg,gen,%cap	Case=Gen|Number=Sing	16	nmod	_	_
+16	korteris	korter+s	NOUN	n/com,sg,in	Case=Ine|Number=Sing	10	nmod	_	_
+17	.	--	PUNCT	punc/--	_	10	punct	_	_
+
+1	Intriigimeistrina	intriigi_meister+na	NOUN	n/com,sg,es,%cap	Case=Ess|Number=Sing	4	nmod	_	_
+2	on	ole+0	VERB	v/main,indic,pres,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	cop	_	_
+3	Savisaar	Savi_saar+0	PROPN	prop/prop,sg,nom,%cap	Case=Nom|Number=Sing	4	nsubj	_	_
+4	võitmatu	võitmatu+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	0	root	_	_
+5	,	--	PUNCT	punc/--	_	4	punct	_	_
+6	osavuselt	osavus+lt	NOUN	n/com,sg,abl	Case=Abl|Number=Sing	7	nmod	_	_
+7	jäävad	jää+vad	VERB	v/main,indic,pres,ps3,pl,ps,af	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	4	conj	_	_
+8	talle	tema+lle	PRON	pron/pers,ps3,sg,all	Case=All|Number=Sing|Person=3|PronType=Prs	7	nmod	_	_
+9	alla	alla+0	ADV	adv/--	_	7	compound:prt	_	_
+10	nii	nii+0	ADV	adv/--	_	13	cc	_	_
+11	arengupartei	arengu_partei+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	13	nmod	_	_
+12	Tiit	Tiit+0	PROPN	prop/prop,sg,nom,%cap	Case=Nom|Number=Sing	13	nmod	_	_
+13	Made	Made+0	PROPN	prop/prop,sg,nom,%cap	Case=Nom|Number=Sing	7	nsubj	_	_
+14	kui	kui+0	SCONJ	conj-c/sub	_	13	cc	_	_
+15	parempoolne	parem_poolne+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	17	amod	_	_
+16	Indrek	Indrek+0	PROPN	prop/prop,sg,nom,%cap	Case=Nom|Number=Sing	17	nmod	_	_
+17	Kannik	Kannik	PROPN	prop/prop,sg,nom,%cap	Case=Nom|Number=Sing	13	conj	_	_
+18	.	--	PUNCT	punc/--	_	4	punct	_	_
+
+1	Keskerakonnal	kesk_erakond+l	NOUN	n/com,sg,ad,%cap	Case=Ade|Number=Sing	2	nmod	_	_
+2	on	ole+0	VERB	v/main,indic,pres,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	Eesti	Eesti+0	PROPN	prop/prop,sg,gen,%cap	Case=Gen|Number=Sing	4	nmod	_	_
+4	parteidest	partei+dest	NOUN	n/com,pl,el	Case=Ela|Number=Plur	6	nmod	_	_
+5	kõige	kõige+0	ADV	adv/--	_	6	advmod	_	_
+6	tugevam	tuge=vam+0	ADJ	adj/comp,sg,nom	Case=Nom|Degree=Cmp|Number=Sing	8	amod	_	_
+7	allüksuste	all_üksus+te	NOUN	n/com,pl,gen	Case=Gen|Number=Plur	8	nmod	_	_
+8	võrk	võrk+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	2	nsubj	_	_
+9	,	--	PUNCT	punc/--	_	11	punct	_	_
+10	et	SUB	SCONJ	conj-s/sub	_	11	mark	_	_
+11	teha	tege+a	VERB	v/main,inf	VerbForm=Inf	8	acl	_	_
+12	lobby	lobby	NOUN	n/com,sg,part	Case=Par|Number=Sing	11	dobj	_	_
+13	valdade	vald+de	NOUN	n/com,pl,gen	Case=Gen|Number=Plur	16	nmod	_	_
+14	ja	CO	CONJ	conj-c/crd	_	13	cc	_	_
+15	väikelinnade	väike_linn+de	NOUN	n/com,pl,gen	Case=Gen|Number=Plur	13	conj	_	_
+16	esindajate	esindaja+te	NOUN	n/com,pl,gen	Case=Gen|Number=Plur	11	nmod	_	_
+17	seas	seas+0	ADP	prp/post,%gen	AdpType=Post	16	case	_	_
+18	.	--	PUNCT	punc/--	_	2	punct	_	_
+
+1	Saalisistuja	saali+s_istu=ja+0	NOUN	n/com,sg,nom,%cap,%ja	Case=Nom|Number=Sing	3	nsubj	_	_
+2	ei	ei+0	AUX	v/aux,neg	Negative=Neg	3	neg	_	_
+3	aimagi	aima+gi	VERB	v/main,indic,pres,ps,neg	Mood=Ind|Negative=Neg|Tense=Pres|VerbForm=Fin	0	root	_	_
+4	,	--	PUNCT	punc/--	_	3	punct	_	_
+5	milline	milline+0	PRON	pron/inter,sg,nom	Case=Nom|Number=Sing|PronType=Int	6	nmod	_	_
+6	võimuvõitlus	võimu_võitlus+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	7	nsubj	_	_
+7	etendub	etendu+b	VERB	v/main,indic,pres,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	ccomp	_	_
+8	Eesti	Eesti+0	PROPN	prop/prop,sg,gen,%cap	Case=Gen|Number=Sing	9	nmod	_	_
+9	telekomiärimeeste	tele_komi_äri_mees+te	NOUN	n/com,pl,gen	Case=Gen|Number=Plur	12	nmod	_	_
+10	ja	ja+0	CONJ	conj-c/crd	_	9	cc	_	_
+11	sideministeeriumi	side_ministeerium+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	9	conj	_	_
+12	kabinettides	kabinet+des	NOUN	n/com,pl,in	Case=Ine|Number=Plur	7	nmod	_	_
+13	.	--	PUNCT	punc/--	_	3	punct	_	_
+
+1	Nende	tema+de	PRON	pron/pers,ps3,pl,gen,%cap	Case=Gen|Number=Plur|Person=3|PronType=Prs	2	nmod	_	_
+2	eesmärk	ees_märk+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	4	nsubj	_	_
+3	oli	ole+i	VERB	v/main,indic,impf,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	4	cop	_	_
+4	saada	saa+da	VERB	v/main,inf	VerbForm=Inf	0	root	_	_
+5	Eesti	Eesti+0	PROPN	prop/prop,sg,gen,%cap	Case=Gen|Number=Sing	6	nmod	_	_
+6	Kaabeltelevisooni	Kaabeltelevisioon+0	NOUN	n/com,sg,gen,%cap	Case=Gen|Number=Sing	7	nmod	_	_
+7	Ettevõtete	ette_võte+te	NOUN	n/com,pl,gen,%cap	Case=Gen|Number=Plur	8	nmod	_	_
+8	Liidu	liit+0	NOUN	n/com,sg,gen,%cap	Case=Gen|Number=Sing	9	nmod	_	_
+9	nimi	nimi+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	4	dobj	_	_
+10	ja	ja+0	CONJ	conj-c/crd	_	4	cc	_	_
+11	selle	see+0	PRON	pron/dem,sg,gen	Case=Gen|Number=Sing|PronType=Dem	12	nmod	_	_
+12	sildi	silt+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	17	nmod	_	_
+13	all	all+0	ADP	prp/post,%gen	AdpType=Post	12	case	_	_
+14	avalikkust	avalikkus+t	NOUN	n/com,sg,part	Case=Par|Number=Sing	17	dobj	_	_
+15	Telia	Telia+0	PROPN	prop/prop,sg,gen,%cap	Case=Gen|Number=Sing	16	nmod	_	_
+16	kasuks	kasu+ks	NOUN	n/com,sg,tr	Case=Tra|Number=Sing	17	nmod	_	_
+17	mõjutama	mõjuta+ma	VERB	v/main,sup,ps,ill	Case=Ill|VerbForm=Sup	4	conj	_	_
+18	hakata	hakka+ta	AUX	v/main,inf	VerbForm=Inf	17	aux	_	_
+19	.	--	PUNCT	punc/--	_	4	punct	_	_
+
+1	Võitlus	võitlus+0	NOUN	n/--	_	0	root	_	_
+2	telefoniside	telefoni_side+0	NOUN	n/--	_	1	nmod	_	_
+3	pärast	pärast+0	ADP	prp/--	AdpType=Prep	2	case	_	_
+
+1	-	--	PUNCT	punc/--	_	6	punct	_	_
+2	Raha	raha+0	NOUN	n/com,sg,gen,%cap	Case=Gen|Number=Sing	6	nmod	_	_
+3	taga	taga+0	ADP	prp/post,%gen	AdpType=Post	2	case	_	_
+4	asi	asi+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	6	nsubj	_	_
+5	ei	ei+0	AUX	v/aux,neg	Negative=Neg	6	neg	_	_
+6	seisa	seis+0	VERB	v/main,indic,pres,ps,neg	Mood=Ind|Negative=Neg|Tense=Pres|VerbForm=Fin	9	dep	_	_
+7	,	--	PUNCT	punc/--	_	6	punct	_	_
+8	-	--	PUNCT	punc/--	_	6	punct	_	_
+9	omandab	omanda+b	VERB	v/main,indic,pres,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+10	Paltsi	Palts+0	PROPN	prop/prop,sg,gen,%cap	Case=Gen|Number=Sing	11	nmod	_	_
+11	jutt	jutt+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	9	nsubj	_	_
+12	laia	lai+0	ADJ	adj/pos,sg,gen	Case=Gen|Degree=Pos|Number=Sing	13	amod	_	_
+13	joone	joon+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	9	dobj	_	_
+14	.	--	PUNCT	punc/--	_	9	punct	_	_
+
+1	Neid	tema+d	PRON	pron/pers,ps3,pl,part,%cap	Case=Par|Number=Plur|Person=3|PronType=Prs	3	dobj	_	_
+2	ei	ei+0	AUX	v/aux,neg	Negative=Neg	3	neg	_	_
+3	kutsutud	kutsu+tud	VERB	v/main,indic,impf,imps,neg	Mood=Ind|Negative=Neg|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	isegi	isegi+0	ADV	adv/--	_	3	advmod	_	_
+5	presentatsioonile	presentatsioon+le	NOUN	n/com,sg,all	Case=All|Number=Sing	3	nmod	_	_
+6	Tallinna	Tallinn+0	PROPN	prop/prop,sg,gen,%cap	Case=Gen|Number=Sing	7	nmod	_	_
+7	raekojas	rae_koda+s	NOUN	n/com,sg,in	Case=Ine|Number=Sing	5	nmod	_	_
+8	.	--	PUNCT	punc/--	_	3	punct	_	_
+
+1	Läbirääkimised	läbi_rääki=mine+d	NOUN	n/com,pl,nom,%cap,%mine	Case=Nom|Number=Plur	2	nsubj	_	_
+2	algasid	alga+sid	VERB	v/main,indic,impf,ps3,pl,ps,af	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	rublaajal	rubla_aeg+l	NOUN	n/com,sg,ad	Case=Ade|Number=Sing	2	nmod	_	_
+4	.	--	PUNCT	punc/--	_	2	punct	_	_
+
+1	Telekomi	tele_komi+0	NOUN	n/--	_	2	nmod	_	_
+2	aktsiad	aktsia+d	NOUN	n/--	_	0	root	_	_
+3	börsile	börs+le	NOUN	n/--	_	2	nmod	_	_
+
+1	Oli	ole+i	VERB	v/main,indic,impf,ps3,sg,ps,af,%cap	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	külm	külm+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	4	amod	_	_
+3	selge	selge+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	4	amod	_	_
+4	aprillipäev	aprilli_päev+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	1	nsubj	_	_
+5	,	--	PUNCT	punc/--	_	1	punct	_	_
+6	kellad	kell+d	NOUN	n/com,pl,nom	Case=Nom|Number=Plur	7	nsubj	_	_
+7	lõid	löö+id	VERB	v/main,indic,impf,ps3,pl,ps,af	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	1	conj	_	_
+8	parajasti	parajasti+0	ADV	adv/--	_	7	advmod	_	_
+9	kolmteist	kolm_teist+0	NUM	num/card,sg,nom,l	Case=Nom|Number=Sing|NumForm=Word|NumType=Card	7	advmod	_	_
+10	.	--	PUNCT	punc/--	_	1	punct	_	_
+
+1	Igal	iga+l	PRON	pron/det,sg,ad,%cap	Case=Ade|Number=Sing|PronType=Tot	2	nmod	_	_
+2	korrusel	korrus+l	NOUN	n/com,sg,ad	Case=Ade|Number=Sing	3	nmod	_	_
+3	vaatas	vaata+s	VERB	v/main,indic,impf,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	lifti	lift+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	5	nmod	_	_
+5	vastasseinalt	vastas_sein+lt	NOUN	n/com,sg,abl	Case=Abl|Number=Sing	3	nmod	_	_
+6	vastu	vastu+0	ADV	adv/--	_	3	advmod	_	_
+7	plakat	plakat+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	3	nsubj	_	_
+8	selle	see+0	PRON	pron/dem,sg,gen	Case=Gen|Number=Sing|PronType=Dem	10	nmod	_	_
+9	tohutu	tohutu+0	ADJ	adj/pos,sg,gen	Case=Gen|Degree=Pos|Number=Sing	10	amod	_	_
+10	näoga	nägu+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	7	nmod	_	_
+11	.	--	PUNCT	punc/--	_	3	punct	_	_
+
+1	All	all+0	ADV	adv/%cap	_	2	nmod	_	_
+2	tänaval	tänav+l	NOUN	n/com,sg,ad	Case=Ade|Number=Sing	3	nmod	_	_
+3	keerutasid	keeruta+sid	VERB	v/main,indic,impf,ps3,pl,ps,af	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	väikesed	väike+d	ADJ	adj/pos,pl,nom	Case=Nom|Degree=Pos|Number=Plur	5	amod	_	_
+5	tuulepöörised	tuule_pööris+d	NOUN	n/com,pl,nom	Case=Nom|Number=Plur	3	nsubj	_	_
+6	tolmu	tolm+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	3	dobj	_	_
+7	ja	ja+0	CONJ	conj-c/crd	_	6	cc	_	_
+8	paberitükke	paberi_tükk+e	NOUN	n/com,pl,part	Case=Par|Number=Plur	6	conj	_	_
+9	,	--	PUNCT	punc/--	_	3	punct	_	_
+10	ja	ja+0	CONJ	conj-c/crd	_	3	cc	_	_
+11	kuigi	kuigi+0	SCONJ	conj-s/sub	_	13	mark	_	_
+12	päike	päike+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	13	nsubj	_	_
+13	paistis	paist+is	VERB	v/main,indic,impf,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	22	advcl	_	_
+14	ja	ja+0	CONJ	conj-c/crd	_	13	cc	_	_
+15	taevas	taevas+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	17	nsubj	_	_
+16	oli	ole+i	VERB	v/main,indic,impf,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	17	cop	_	_
+17	eresinine	ere_sinine+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	13	conj	_	_
+18	,	--	PUNCT	punc/--	_	17	punct	_	_
+19	oli	ole+i	VERB	v/main,indic,impf,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	22	cop	_	_
+20	kõik	kõik+0	PRON	pron/det,sg,nom	Case=Nom|Number=Sing|PronType=Tot	22	nsubj	_	_
+21	ümberringi	ümber_ringi+0	ADV	adv/--	_	22	advmod	_	_
+22	hall	hall+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	3	conj	_	_
+23	ja	ja+0	CONJ	conj-c/crd	_	22	cc	_	_
+24	ilmetu	ilmetu+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	22	conj	_	_
+25	välja	välja+0	ADV	adv/--	_	26	compound:prt	_	_
+26	arvatud	arva+tud	VERB	v/main,partic,past,imps	Tense=Past|VerbForm=Part	20	acl	_	_
+27	plakatid	plakat+d	NOUN	n/com,pl,nom	Case=Nom|Number=Plur	26	dobj	_	_
+28	,	--	PUNCT	punc/--	_	27	punct	_	_
+29	mida	mis+da	PRON	pron/rel,pl,part	Case=Par|Number=Plur|PronType=Rel	33	dobj	_	_
+30	oli	ole+i	AUX	v/aux,indic,impf,ps3,sg,ps,af	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	33	aux	_	_
+31	kõikjale	kõikjale+0	ADV	adv/--	_	33	advmod	_	_
+32	üles	üles+0	ADV	adv/--	_	33	compound:prt	_	_
+33	kleebitud	kleepi+tud	VERB	v/main,partic,past,imps	Tense=Past|VerbForm=Part	27	acl	_	_
+34	.	--	PUNCT	punc/--	_	3	punct	_	_
+
+1	Aeg-ajalt	aeg-ajalt+0	ADV	adv/.cap	_	2	advmod	_	_
+2	liikusid	liiku+sid	VERB	v-fin/main,indic,impf,ps3,pl,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	tagataustal	taga-taust+l	NOUN	n/com,sg,ad	Case=Ade|Number=Sing	2	nmod	_	_
+4	ka	ka+0	ADV	adv/--	_	5	advmod	_	_
+5	teised	teine+d	PRON	pron-dem/indef,dem,pl,nom	Case=Nom|Number=Plur|PronType=Dem	7	nmod	_	_
+6	sarnased	sarnane+d	ADJ	adj/pos,pl,nom	Case=Nom|Degree=Pos|Number=Plur	7	amod	_	_
+7	olendid	olend+d	NOUN	n/com,pl,nom	Case=Nom|Number=Plur	2	nsubj	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Alasti	alasti+0	ADJ	adj/pos,.cap	Degree=Pos	2	amod	_	_
+2	mees	mees+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	3	nsubj	_	_
+3	viskus	visku+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	ukse	uks+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	3	nmod	_	_
+5	ees	ees+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	4	case	_	_
+6	lumme	lumi+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	3	nmod	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	Ants	Ants+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	4	nsubj	_	_
+2	ja	ja+0	CONJ	conj-c/crd	_	1	cc	_	_
+3	Valdek	Valdek+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	1	conj	_	_
+4	sõudsid	sõud+sid	VERB	v-fin/main,indic,impf,ps3,pl,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+5	püstjate	püstjas+te	ADJ	adj/pos,pl,gen	Case=Gen|Degree=Pos|Number=Plur	6	amod	_	_
+6	tõmmetega	tõmme+tega	NOUN	n/com,pl,kom	Case=Com|Number=Plur	4	nmod	_	_
+7	läbi	läbi+0	ADP	prp/pre,.gen	AdpType=Prep|Case=Gen	9	case	_	_
+8	tumeda	tume+0	ADJ	adj/pos,sg,gen	Case=Gen|Degree=Pos|Number=Sing	9	amod	_	_
+9	vee	vesi+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	4	nmod	_	_
+10	.	.	PUNCT	punc/Fst	PunctType=Peri	4	punct	_	_
+
+1	Bronka	Bronka+0	PROPN	prop/prop,sg,nom,.cap,.?	Case=Nom|Number=Sing	2	nsubj	_	_
+2	liigub	liiku+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	vaevaliselt	vaeva=liselt+0	ADV	adv/--	_	2	advmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Ent	ent+0	CONJ	conj-c/crd,.cap	_	3	cc	_	_
+2	juba	juba+0	ADV	adv/--	_	3	advmod	_	_
+3	tatsas	tatsa+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	Liine	liin+e	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	3	nsubj	_	_
+5	lähemale	lähemale+0	ADV	adv/--	_	3	compound:prt	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	Galeb	Galeb+0	PROPN	prop/prop,sg,nom,.cap,.?	Case=Nom|Number=Sing	2	nsubj	_	_
+2	viskus	visku+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	tugitooli	tugi-tool+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Hobusega	hobune+ga	NOUN	n/com,sg,kom,.cap	Case=Com|Number=Sing	2	nmod	_	_
+2	sõidutas	sõiduta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	ta	tema+0	PRON	pron-pers/pers,ps3,sg,nom	Case=Nom|Number=Sing|Person=3|PronType=Prs	2	nsubj	_	_
+4	lõpnud	lõpnud+0	ADJ	adj/pos,.nud	Degree=Pos	5	amod	_	_
+5	põrsakest	põrsa=ke+t	NOUN	n/com,sg,part,.ke	Case=Par|Number=Sing	2	dobj	_	_
+6	linna	linn+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Isa	isa+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	prantsatas	prantsata+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	koos	koos+0	ADP	prp/pre,.kom	AdpType=Prep|Case=Com	4	case	_	_
+4	jalgrattaga	jalg-ratas+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	2	nmod	_	_
+5	endise	endine+0	ADJ	adj/pos,sg,gen	Case=Gen|Degree=Pos|Number=Sing	6	amod	_	_
+6	hüdroelektrijaama	hüdro-elektri-jaam+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	8	nmod	_	_
+7	kõrval	kõrval+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	6	case	_	_
+8	kasvava	kasva=v+0	ADJ	adj/pos,sg,gen,.v,partic	Case=Gen|Degree=Pos|Number=Sing|VerbForm=Part	10	amod	_	_
+9	kuldvihma	kuld-vihm+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	10	nmod	_	_
+10	põõsa	põõsas+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+11	alla	alla+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	10	case	_	_
+12	kummuli	kummuli+0	ADV	adv/--	_	2	advmod	_	_
+13	maha	maha+0	ADV	adv/--	_	2	compound:prt	_	_
+14	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Ja	ja+0	CONJ	conj-c/crd,.cap	_	5	cc	_	_
+2	Vigelid	Vigel+d	PROPN	prop/prop,pl,nom,.cap,.?	Case=Nom|Number=Plur	5	nsubj	_	_
+3	ja	ja+0	CONJ	conj-c/crd	_	2	cc	_	_
+4	Milded	Milde+d	PROPN	prop/prop,pl,nom,.cap,.?	Case=Nom|Number=Plur	2	conj	_	_
+5	sõidavad	sõit+vad	VERB	v-fin/main,indic,pres,ps3,pl,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+6	arreteerituina	arreteeritud+ina	ADJ	adj/pos,pl,es,.tud	Case=Ess|Degree=Pos|Number=Plur	5	advmod	_	_
+7	rajoonilinna	rajooni-linn+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	5	nmod	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	5	punct	_	_
+
+1	Juht	juht+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	tõukas	tõuka+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	peni	peni+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	teelt	tee+lt	NOUN	n/com,sg,abl	Case=Abl|Number=Sing	2	nmod	_	_
+5	kõrvale	kõrvale+0	ADV	adv/--	_	2	compound:prt	_	_
+6	kraavi	kraav+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Kausid	kauss+d	NOUN	n/com,pl,nom,.cap	Case=Nom|Number=Plur	7	nsubj	_	_
+2	hautatud	hauta=tud+0	ADJ	adj/pos,.tud,partic	Degree=Pos|VerbForm=Part	3	amod	_	_
+3	hapukapsaste	hapu-kapsas+te	NOUN	n/com,pl,gen	Case=Gen|Number=Plur	1	nmod	_	_
+4	ja	ja+0	CONJ	conj-c/crd	_	3	cc	_	_
+5	auravate	aura=v+te	ADJ	adj/pos,pl,gen,.v,partic	Case=Gen|Degree=Pos|Number=Plur|VerbForm=Part	6	amod	_	_
+6	keedukartulitega	keedu-kartul+tega	NOUN	n/com,pl,kom	Case=Com|Number=Plur	3	conj	_	_
+7	liikusid	liiku+sid	VERB	v-fin/main,indic,impf,ps3,pl,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+8	käest	käsi+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	7	nmod	_	_
+9	kätte	käsi+tte	NOUN	n/com,sg,adit	Case=Add|Number=Sing	7	nmod	_	_
+10	.	.	PUNCT	punc/Fst	PunctType=Peri	7	punct	_	_
+
+1	Kell	kell+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nmod	_	_
+2	kaks	kaks+0	NUM	num/card,sg,nom,l	Case=Nom|Number=Sing|NumForm=Word|NumType=Card	3	advmod	_	_
+3	sõidutas	sõiduta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	ta	tema+0	PRON	pron-pers/pers,ps3,sg,nom	Case=Nom|Number=Sing|Person=3|PronType=Prs	3	nsubj	_	_
+5	mu	mina+0	PRON	pron-pers/pers,ps1,sg,gen	Case=Gen|Number=Sing|Person=1|PronType=Prs	3	dobj	_	_
+6	koju	kodu+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	3	nmod	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	Knacke-Sommer	Knacke-Sommer+0	PROPN	prop/prop,sg,nom,.cap,.?	Case=Nom|Number=Sing	2	nsubj	_	_
+2	ujus	uju+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	1977	1977+0	NUM	num/card,?,digit	NumForm=Digit|NumType=Card	2	advmod	_	_
+4	esimese	esimene+0	ADJ	adj/ord,sg,gen,l	Case=Gen|Number=Sing|NumForm=Word|NumType=Ord	5	amod	_	_
+5	naisena	naine+na	NOUN	n/com,sg,es	Case=Ess|Number=Sing	2	nmod	_	_
+6	100	100+0	NUM	num/card,?,digit	NumForm=Digit|NumType=Card	7	nummod	_	_
+7	meetrit	meeter+t	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	nmod	_	_
+8	liblikstiilis	liblik-stiil+s	NOUN	n/com,sg,in,.?	Case=Ine|Number=Sing	2	nmod	_	_
+9	alla	alla+0	ADP	prp/pre,.gen	AdpType=Prep|Case=Gen	10	case	_	_
+10	minuti	minut+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+11	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Krundil	krunt+l	NOUN	n/com,sg,ad,.cap	Case=Ade|Number=Sing	2	nmod	_	_
+2	tatsab	tatsa+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	ringi	ringi+0	ADV	adv/--	_	2	compound:prt	_	_
+4	tohutu	tohutu+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	5	amod	_	_
+5	hulk	hulk+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	2	nsubj	_	_
+6	musti	must+i	ADJ	adj/pos,pl,part	Case=Par|Degree=Pos|Number=Plur	7	amod	_	_
+7	sigu	siga+u	NOUN	n/com,pl,part	Case=Par|Number=Plur	5	nmod	_	_
+8	ja	ja+0	CONJ	conj-c/crd	_	7	cc	_	_
+9	põrsaid	põrsas+id	NOUN	n/com,pl,part	Case=Par|Number=Plur	7	conj	_	_
+10	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Kui	kui+0	SCONJ	conj-c/crd,sub,.cap	_	4	cc	_	_
+2	tüdruku	tüdruk+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	4	nmod	_	_
+3	ette	ette+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	2	case	_	_
+4	prantsatas	prantsata+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+5	silmamoondaja	silma-moonda=ja+0	NOUN	n/com,sg,gen,.ja	Case=Gen|Number=Sing	7	nmod	_	_
+6	otsastrebitud	otsa+st-rebi=tud+0	ADJ	adj/pos,.tud,partic	Degree=Pos|VerbForm=Part	7	amod	_	_
+7	jäse	jäse+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	4	nsubj	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	4	punct	_	_
+
+1	Laps	laps+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	tatsas	tatsa+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kohe	kohe+0	ADV	adv/--	_	2	advmod	_	_
+4	akna	aken+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+5	poole	poole+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	4	case	_	_
+6	lilli	lill+i	NOUN	n/com,pl,part	Case=Par|Number=Plur	7	dobj	_	_
+7	vaatama	vaata+ma	VERB	v-inf/main,sup,ps,ill,.NGP-P	Case=Ill|VerbForm=Sup	2	advcl	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Liigutan	liiguta+n	VERB	v-fin/main,indic,pres,ps1,sg,ps,af,.cap,.FinV,.Part	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	_
+2	arvutit	arvuti+t	NOUN	n/com,sg,part	Case=Par|Number=Sing	1	dobj	_	_
+3	mööda	mööda+0	ADP	prp/pre,.part	AdpType=Prep|Case=Par	4	case	_	_
+4	lauda	laud+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	1	nmod	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Liikusime	liiku+sime	VERB	v-fin/main,indic,impf,ps1,pl,ps,af,.cap,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	vankri	vanker+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	1	nmod	_	_
+3	või	või+0	CONJ	conj-c/--	_	2	cc	_	_
+4	reega	regi+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	2	conj	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Loomaarst	looma-arst+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	prantsatas	prantsata+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	pardipoegadele	pardi-poeg+dele	NOUN	n/com,pl,all	Case=All|Number=Plur	2	nmod	_	_
+4	peale	peale+0	ADV	adv/--	_	2	compound:prt	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Ma	mina+0	PRON	pron-pers/pers,ps1,sg,nom,.cap	Case=Nom|Number=Sing|Person=1|PronType=Prs	5	nsubj	_	_
+2	olin	ole+in	AUX	v-fin/aux,indic,impf,ps1,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	5	aux	_	_
+3	lõhest	lõhe+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	5	nmod	_	_
+4	välja	välja+0	ADV	adv/--	_	5	compound:prt	_	_
+5	roninud	roni+nud	VERB	v-pcp2/main,partic,past,ps,.Intr	Tense=Past|VerbForm=Part	0	root	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	5	punct	_	_
+
+1	Ma	mina+0	PRON	pron-pers/pers,ps1,sg,nom,.cap	Case=Nom|Number=Sing|Person=1|PronType=Prs	2	nsubj	_	_
+2	sõitsin	sõit+sin	VERB	v-fin/main,indic,impf,ps1,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	millalgi	millalgi+0	ADV	adv/--	_	2	advmod	_	_
+4	hoopis	hoopis+0	ADV	adv/--	_	2	advmod	_	_
+5	koju	kodu+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Mehed	mees+d	NOUN	n/com,pl,nom,.cap	Case=Nom|Number=Plur	2	nsubj	_	_
+2	sõidutasid	sõiduta+sid	VERB	v-fin/main,indic,impf,ps3,pl,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	mu	mina+0	PRON	pron-pers/pers,ps1,sg,gen	Case=Gen|Number=Sing|Person=1|PronType=Prs	2	dobj	_	_
+4	lennuväljale	lennu-väli+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Metsavend	metsa-vend+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	liigutas	liiguta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Part	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	mõne	mõni+0	PRON	pron-def/indef,sg,gen	Case=Gen|Number=Sing|Poss=Yes|PronType=Ind,Neg	4	nmod	_	_
+4	korra	kord+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+5	kätt	käsi+tt	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	dobj	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Miski	miski+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	liigutas	liiguta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Part	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	lennuki	lennuk+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	4	nmod	_	_
+4	saba	saba+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+5	juures	juures+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	4	case	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Mu	mina+0	PRON	pron-pers/pers,ps1,sg,gen,.cap	Case=Gen|Number=Sing|Person=1|PronType=Prs	2	nmod	_	_
+2	ema	ema+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	3	nsubj	_	_
+3	valab	vala+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+4	mulle	mina+lle	PRON	pron-pers/pers,ps1,sg,all	Case=All|Number=Sing|Person=1|PronType=Prs	3	nmod	_	_
+5	koduses	kodune+s	ADJ	adj/pos,sg,in	Case=Ine|Degree=Pos|Number=Sing	6	amod	_	_
+6	peolauas	peo-laud+s	NOUN	n/com,sg,in	Case=Ine|Number=Sing	3	nmod	_	_
+7	klaasikese	klaasi=ke+0	NOUN	n/com,sg,gen,.ke	Case=Gen|Number=Sing	3	dobj	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	Nad	tema+d	PRON	pron-pers/pers,ps3,pl,nom,.cap	Case=Nom|Number=Plur|Person=3|PronType=Prs	2	nsubj	_	_
+2	sõitsid	sõit+sid	VERB	v-fin/main,indic,impf,ps3,pl,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kreeka	kreeka+0	ADJ	adj/--	_	4	amod	_	_
+4	kvartalist	kvartal+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+5	läbi	läbi+0	ADV	adv/--	_	2	compound:prt	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Nad	tema+d	PRON	pron-pers/pers,ps3,pl,nom,.cap	Case=Nom|Number=Plur|Person=3|PronType=Prs	2	nsubj	_	_
+2	viskusid	visku+sid	VERB	v-fin/main,indic,impf,ps3,pl,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kogu	kogu+0	ADJ	adj/pos	Degree=Pos	4	amod	_	_
+4	keharaskusega	keha-raskus+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	2	nmod	_	_
+5	vastu	vastu+0	ADP	prp/pre,.part	AdpType=Prep|Case=Par	6	case	_	_
+6	ust	ust+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	nmod	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Need	see+d	PRON	pron-dem/dem,pl,nom,.cap	Case=Nom|Number=Plur|PronType=Dem	2	dobj	_	_
+2	valati	vala+ti	VERB	v-fin/main,indic,impf,imps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kibekiiresti	kibe-kiiresti+0	ADV	adv/--	_	2	advmod	_	_
+4	betooniga	betoon+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	2	nmod	_	_
+5	kinni	kinni+0	ADV	adv/--	_	2	compound:prt	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Noormees	noor-mees+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	prantsatas	prantsata+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	maha	maha+0	ADV	adv/--	_	2	compound:prt	_	_
+4	nagu	nagu+0	SCONJ	conj-c/sub	_	5	mark	_	_
+5	nott	nott+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	2	nmod	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Palja	paljas+0	ADJ	adj/pos,sg,gen,.cap	Case=Gen|Degree=Pos|Number=Sing	2	amod	_	_
+2	ülakehaga	üla-keha+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	3	nmod	_	_
+3	mees	mees+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	4	nsubj	_	_
+4	tõukas	tõuka+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+5	ta	tema+0	PRON	pron-pers/pers,ps3,sg,gen	Case=Gen|Number=Sing|Person=3|PronType=Prs	4	dobj	_	_
+6	sirmi	sirm+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	4	nmod	_	_
+7	taha	taha+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	6	case	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	4	punct	_	_
+
+1	Perenaine	pere-naine+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	tatsas	tatsa+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	toa	tuba+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+4	juurde	juurde+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	3	case	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Pisarad	pisar+d	NOUN	n/com,pl,nom,.cap	Case=Nom|Number=Plur	2	nsubj	_	_
+2	tilkusid	tilku+sid	VERB	v-fin/main,indic,impf,ps3,pl,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	rõõmust	rõõm+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Pärast	pärast+0	ADP	prp/pre,.part,.cap	AdpType=Prep|Case=Par	3	case	_	_
+2	viimast	viimane+t	ADJ	adj/pos,sg,part	Case=Par|Degree=Pos|Number=Sing	3	amod	_	_
+3	duublit	duublit+0	NOUN	n/com,sg,part,.?	Case=Par|Number=Sing	4	nmod	_	_
+4	valati	vala+ti	VERB	v-fin/main,indic,impf,imps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Tense=Imp|VerbForm=Fin	0	root	_	_
+5	talle	tema+lle	PRON	pron-pers/pers,ps3,sg,all	Case=All|Number=Sing|Person=3|PronType=Prs	4	nmod	_	_
+6	kuuma	kuum+0	ADJ	adj/pos,sg,gen	Case=Gen|Degree=Pos|Number=Sing	7	amod	_	_
+7	tee	tee+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	4	nmod	_	_
+8	sisse	sisse+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	7	case	_	_
+9	sorts	sorts+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	4	dobj	_	_
+10	valget	valge+t	ADJ	adj/pos,sg,part	Case=Par|Degree=Pos|Number=Sing	11	amod	_	_
+11	viina	viin+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	9	nmod	_	_
+12	.	.	PUNCT	punc/Fst	PunctType=Peri	4	punct	_	_
+
+1	Aeglaselt	aeglaselt+0	ADV	adv/.cap	_	2	advmod	_	_
+2	liikus	liiku+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	poisi	poiss+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	4	nmod	_	_
+4	käsi	käsi+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	2	nsubj	_	_
+5	Anne'i	Anne+i	PROPN	prop/prop,sg,gen,.cap,.?	Case=Gen|Number=Sing	2	nmod	_	_
+6	poole	poole+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	5	case	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Siis	siis+0	ADV	adv/.cap	_	2	advmod	_	_
+2	liikus	liiku+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	ta	tema+0	PRON	pron-pers/pers,ps3,sg,gen	Case=Gen|Number=Sing|Person=3|PronType=Prs	4	nmod	_	_
+4	käsi	käsi+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	2	nsubj	_	_
+5	väga	väga+0	ADV	adv/--	_	6	advmod	_	_
+6	kiiresti	kiiresti+0	ADV	adv/--	_	2	advmod	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Ronid	roni+d	VERB	v-fin/main,indic,pres,ps2,sg,ps,af,.cap,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	0	root	_	_
+2	duši	dušš+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	1	nmod	_	_
+3	alla	alla+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	2	case	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Ronisin	roni+sin	VERB	v-fin/main,indic,impf,ps1,sg,ps,af,.cap,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	teiba	teivas+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	1	nmod	_	_
+3	abil	abil+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	2	case	_	_
+4	edasi	edasi+0	ADV	adv/--	_	1	compound:prt	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Samal	sama+l	PRON	pron-dem/dem,sg,ad,.cap	Case=Ade|Number=Sing|PronType=Dem	2	nmod	_	_
+2	ajal	aeg+l	NOUN	n/com,sg,ad	Case=Ade|Number=Sing	3	nmod	_	_
+3	sõudis	sõud+is	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	Muraka	murakas+0	NOUN	n/com,sg,gen,.cap	Case=Gen|Number=Sing	5	nmod	_	_
+5	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	3	nsubj	_	_
+6	piki	piki+0	ADP	prp/pre,.part	AdpType=Prep|Case=Par	7	case	_	_
+7	rooäärt	roo-äär+t	NOUN	n/com,sg,part	Case=Par|Number=Sing	3	nmod	_	_
+8	oma	oma+0	PRON	pron-poss/pos,det,refl,sg,gen	Case=Gen|Number=Sing|Poss=Yes|PronType=Prs|Reflex=Yes	9	nmod	_	_
+9	mõrra	mõrd+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	3	nmod	_	_
+10	poole	poole+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	9	case	_	_
+11	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	Sammusin	sammu+sin	VERB	v-fin/main,indic,impf,ps1,sg,ps,af,.cap,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	end	ise+0	PRON	pron-poss/pos,det,refl,sg,part	Case=Par|Number=Sing|Poss=Yes|PronType=Prs|Reflex=Yes	1	dobj	_	_
+3	hingetuks	hingetu+ks	ADJ	adj/pos,sg,tr	Case=Tra|Degree=Pos|Number=Sing	1	advmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	See	see+0	PRON	pron-dem/dem,sg,nom,.cap	Case=Nom|Number=Sing|PronType=Dem	3	nmod	_	_
+2	isekas	isekas+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	3	amod	_	_
+3	Katrina	Katrina+0	PROPN	prop/prop,sg,nom,.cap,.?	Case=Nom|Number=Sing	4	nsubj	_	_
+4	tormab	torma+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+5	kohe	kohe+0	ADV	adv/--	_	4	advmod	_	_
+6	oma	oma+0	PRON	pron-poss/pos,det,refl,sg,gen	Case=Gen|Number=Sing|Poss=Yes|PronType=Prs|Reflex=Yes	7	nmod	_	_
+7	asjade	asi+de	NOUN	n/com,pl,gen	Case=Gen|Number=Plur	8	nmod	_	_
+8	allesjäämist	alles-jää=mine+t	NOUN	n/com,sg,part,.mine	Case=Par|Number=Sing	9	dobj	_	_
+9	kontrollima	kontrolli+ma	VERB	v-inf/main,sup,ps,ill,.Part	Case=Ill|VerbForm=Sup	4	advcl	_	_
+10	.	.	PUNCT	punc/Fst	PunctType=Peri	4	punct	_	_
+
+1	Sergeil	Sergei+l	PROPN	prop/prop,sg,ad,.cap	Case=Ade|Number=Sing	2	nmod	_	_
+2	tõusnuks	tõus+nuks	VERB	v-fin/main,cond,past,ps,af,.FinV,.Intr	Mood=Cnd|Negative=Pos|Tense=Past|VerbForm=Fin	0	root	_	_
+3	selle	see+0	PRON	pron-dem/dem,sg,gen	Case=Gen|Number=Sing|PronType=Dem	4	nmod	_	_
+4	koha	koht+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+5	peal	peal+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	4	case	_	_
+6	kulm	kulm+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	2	nsubj	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Siis	siis+0	ADV	adv/.cap	_	2	advmod	_	_
+2	tormanud	torma+nud	VERB	v-pcp2/main,partic,past,ps,.Intr	Tense=Past|VerbForm=Part	0	root	_	_
+3	nemad	tema+d	PRON	pron-pers/pers,ps3,pl,nom	Case=Nom|Number=Plur|Person=3|PronType=Prs	2	nsubj	_	_
+4	laomaja	lao-maja+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	5	nmod	_	_
+5	trepist	trepp+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+6	üles	üles+0	ADV	adv/--	_	2	compound:prt	_	_
+7	tuld	tuli+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	8	dobj	_	_
+8	kustutama	kustuta+ma	VERB	v-inf/main,sup,ps,ill,.NGP-P	Case=Ill|VerbForm=Sup	2	advcl	_	_
+9	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Sisenesin	sisene+sin	VERB	v-fin/main,indic,impf,ps1,sg,ps,af,.cap,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	koridorist	koridor+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	1	nmod	_	_
+3	tuppa	tuba+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	1	nmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Sõitsime	sõit+sime	VERB	v-fin/main,indic,impf,ps1,pl,ps,af,.cap,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	ratastega	ratas+tega	NOUN	n/com,pl,kom	Case=Com|Number=Plur	1	nmod	_	_
+3	äikse	äike+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	1	nmod	_	_
+4	käes	käes+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	3	case	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Sõnatult	sõnatult+0	ADV	adv/.cap	_	2	advmod	_	_
+2	valas	vala+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	ta	tema+0	PRON	pron-pers/pers,ps3,sg,nom	Case=Nom|Number=Sing|Person=3|PronType=Prs	2	nsubj	_	_
+4	pool	pool+0	NUM	num/card,sg,nom	Case=Nom|Number=Sing|NumType=Card	2	advmod	_	_
+5	teeklaasitäit	tee-klaasi-täis+t	NOUN	n/com,sg,part	Case=Par|Number=Sing	4	nmod	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Särgi	särk+0	NOUN	n/com,sg,gen,.cap	Case=Gen|Number=Sing	5	nmod	_	_
+2	ja	ja+0	CONJ	conj-c/crd	_	1	cc	_	_
+3	seeliku	seelik+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	1	conj	_	_
+4	vahele	vahele+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	1	case	_	_
+5	jääv	jääv+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	7	amod	_	_
+6	peopesalaiune	peo-pesa-laiune+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	7	amod	_	_
+7	paljand	paljand+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	8	nsubj	_	_
+8	tõusis	tõus+is	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+9	hingamise	hinga=mine+0	NOUN	n/com,sg,gen,.mine	Case=Gen|Number=Sing	10	nmod	_	_
+10	rütmis	rütm+s	NOUN	n/com,sg,in	Case=Ine|Number=Sing	8	nmod	_	_
+11	.	.	PUNCT	punc/Fst	PunctType=Peri	8	punct	_	_
+
+1	Sõudsin	sõud+sin	VERB	v-fin/main,indic,impf,ps1,sg,ps,af,.cap,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	lootsiku	lootsik+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	1	dobj	_	_
+3	üle	üle+0	ADP	prp/pre,.gen	AdpType=Prep|Case=Gen	4	case	_	_
+4	jõe	jõgi+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	1	nmod	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Tagatoas	taga-tuba+s	NOUN	n/com,sg,in,.cap	Case=Ine|Number=Sing	2	nmod	_	_
+2	liigutab	liiguta+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.Part	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	keegi	keegi+0	PRON	pron-def/indef,sg,nom	Case=Nom|Number=Sing|Poss=Yes|PronType=Ind,Neg	2	nsubj	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Ta	tema+0	PRON	pron-pers/pers,ps3,sg,nom,.cap	Case=Nom|Number=Sing|Person=3|PronType=Prs	2	nsubj	_	_
+2	liigutas	liiguta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Part	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	sõrmi	sõrm+0	NOUN	n/com,pl,part	Case=Par|Number=Plur	2	dobj	_	_
+4	mu	mina+0	PRON	pron-pers/pers,ps1,sg,gen	Case=Gen|Number=Sing|Person=1|PronType=Prs	5	nmod	_	_
+5	peos	peo+s	NOUN	n/com,sg,in	Case=Ine|Number=Sing	2	nmod	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Tarvik	tarvik+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	3	nsubj	_	_
+2	lausa	lausa+0	ADV	adv/--	_	3	advmod	_	_
+3	tõukas	tõuka+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	ta	tema+0	PRON	pron-pers/pers,ps3,sg,gen	Case=Gen|Number=Sing|Person=3|PronType=Prs	3	dobj	_	_
+5	mu	mina+0	PRON	pron-pers/pers,ps1,sg,gen	Case=Gen|Number=Sing|Person=1|PronType=Prs	3	nmod	_	_
+6	ette	ette+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	5	case	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	Ta	tema+0	PRON	pron-pers/pers,ps3,sg,nom,.cap	Case=Nom|Number=Sing|Person=3|PronType=Prs	2	nsubj	_	_
+2	sõidutas	sõiduta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	mind	mina+d	PRON	pron-pers/pers,ps1,sg,part	Case=Par|Number=Sing|Person=1|PronType=Prs	2	dobj	_	_
+4	rattaga	ratas+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	2	nmod	_	_
+5	muru	muru+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+6	peal	peal+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	5	case	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Ta	tema+0	PRON	pron-pers/pers,ps3,sg,nom,.cap	Case=Nom|Number=Sing|Person=3|PronType=Prs	2	nsubj	_	_
+2	tatsas	tatsa+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	tuba	tuba+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	nmod	_	_
+4	mööda	mööda+0	ADP	pst/post,.part	AdpType=Post|Case=Par	3	case	_	_
+5	ringi	ringi+0	ADV	adv/--	_	2	compound:prt	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Tatsasin	tatsa+sin	VERB	v-fin/main,indic,impf,ps1,sg,ps,af,.cap,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	seda	see+da	PRON	pron-dem/dem,sg,part	Case=Par|Number=Sing|PronType=Dem	3	nmod	_	_
+3	vahemaad	vahe-maa+d	NOUN	n/com,sg,part	Case=Par|Number=Sing	1	nmod	_	_
+4	hommikust	hommik+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	1	nmod	_	_
+5	õhtuni	õhtu+ni	NOUN	n/com,sg,term	Case=Ter|Number=Sing	1	nmod	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Ta	tema+0	PRON	pron-pers/pers,ps3,sg,nom,.cap	Case=Nom|Number=Sing|Person=3|PronType=Prs	2	nsubj	_	_
+2	valas	vala+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	endal	ise+l	PRON	pron-poss/pos,det,refl,sg,ad	Case=Ade|Number=Sing|Poss=Yes|PronType=Prs|Reflex=Yes	2	nmod	_	_
+4	klaasi	klaas+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+5	täis	täis+0	ADV	adv/--	_	2	advmod	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Ta	tema+0	PRON	pron-pers/pers,ps3,sg,nom,.cap	Case=Nom|Number=Sing|Person=3|PronType=Prs	2	nsubj	_	_
+2	väljus	välju+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	alevi	alev+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+4	taha	taha+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	3	case	_	_
+5	jõe	jõgi+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	7	nmod	_	_
+6	kõrgele	kõrge+le	ADJ	adj/pos,sg,all	Case=All|Degree=Pos|Number=Sing	7	amod	_	_
+7	kaldale	kallas+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Tema	tema+0	PRON	pron-pers/pers,ps3,sg,gen,.cap	Case=Gen|Number=Sing|Person=3|PronType=Prs	3	nmod	_	_
+2	järel	järel+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	1	case	_	_
+3	väljub	välju+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+4	valges	valge+s	ADJ	adj/pos,sg,in	Case=Ine|Degree=Pos|Number=Sing	5	amod	_	_
+5	ülikonnas	ülikond+s	NOUN	n/com,sg,in	Case=Ine|Number=Sing	7	nmod	_	_
+6	korpulentne	korpulentne+0	ADJ	adj/pos,sg,nom	Case=Nom|Degree=Pos|Number=Sing	7	amod	_	_
+7	Emerson	Emerson+0	PROPN	prop/prop,sg,nom,.cap,.?	Case=Nom|Number=Sing	3	nsubj	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	Tilkuv	tilku=v+0	ADJ	adj/pos,sg,nom,.cap,.v,partic	Case=Nom|Degree=Pos|Number=Sing|VerbForm=Part	2	amod	_	_
+2	Magnus	Magnus+0	PROPN	prop/prop,sg,nom,.cap,.?	Case=Nom|Number=Sing	3	nsubj	_	_
+3	prantsatas	prantsata+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	mu	mina+0	PRON	pron-pers/pers,ps1,sg,gen	Case=Gen|Number=Sing|Person=1|PronType=Prs	3	nmod	_	_
+5	kõrvale	kõrvale+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	4	case	_	_
+6	maakamarale	maa-kamar+le	NOUN	n/com,sg,all	Case=All|Number=Sing	3	nmod	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	Toomas	Toomas+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	liigutas	liiguta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Part	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	Marit	Mari+t	PROPN	prop/prop,sg,part,.cap	Case=Par|Number=Sing	2	dobj	_	_
+4	akna	aken+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+5	poole	poole+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	4	case	_	_
+6	õhku	õhk+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	7	dobj	_	_
+7	hingama	hinga+ma	VERB	v-inf/main,sup,ps,ill	Case=Ill|VerbForm=Sup	2	advcl	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Tormasin	torma+sin	VERB	v-fin/main,indic,impf,ps1,sg,ps,af,.cap,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	üles	üles+0	ADV	adv/--	_	1	advmod	_	_
+3	põndakule	põndak+le	NOUN	n/com,sg,all	Case=All|Number=Sing	1	nmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Täpselt	täpselt+0	ADV	adv/.cap	_	2	advmod	_	_
+2	samal	sama+l	PRON	pron-dem/dem,sg,ad	Case=Ade|Number=Sing|PronType=Dem	3	nmod	_	_
+3	kellaajal	kella-aeg+l	NOUN	n/com,sg,ad	Case=Ade|Number=Sing	6	nmod	_	_
+4	nagu	nagu+0	SCONJ	conj-c/sub	_	5	mark	_	_
+5	alati	alati+0	ADV	adv/--	_	3	nmod	_	_
+6	väljus	välju+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+7	Miili	miili+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	6	nsubj	_	_
+8	ka	ka+0	ADV	adv/--	_	6	advmod	_	_
+9	täna	täna+0	ADV	adv/--	_	6	advmod	_	_
+10	tühja	tühi+0	ADJ	adj/pos,sg,gen	Case=Gen|Degree=Pos|Number=Sing	11	amod	_	_
+11	kotiga	kott+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	6	nmod	_	_
+12	majast	maja+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	6	nmod	_	_
+13	.	.	PUNCT	punc/Fst	PunctType=Peri	6	punct	_	_
+
+1	Tõukasin	tõuka+sin	VERB	v-fin/main,indic,impf,ps1,sg,ps,af,.cap,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	jalaga	jalg+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	1	nmod	_	_
+3	selle	see+0	PRON	pron-dem/dem,sg,gen	Case=Gen|Number=Sing|PronType=Dem	1	dobj	_	_
+4	põrandale	põrand+le	NOUN	n/com,sg,all	Case=All|Number=Sing	1	nmod	_	_
+5	maha	maha+0	ADV	adv/--	_	1	compound:prt	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Tõukas	tõuka+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.cap,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	pikali	pikali+0	ADV	adv/--	_	1	advmod	_	_
+3	keset	keset+0	ADP	prp/pre,.part	AdpType=Prep|Case=Par	4	case	_	_
+4	põrandat	põrand+t	NOUN	n/com,sg,part	Case=Par|Number=Sing	1	nmod	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Tuul	tuul+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	liigutas	liiguta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Part	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kardinaid	kardin+id	NOUN	n/com,pl,part	Case=Par|Number=Plur	2	dobj	_	_
+4	hommikust	hommik+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+5	õhtuni	õhtu+ni	NOUN	n/com,sg,term	Case=Ter|Number=Sing	2	nmod	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Tuul	tuul+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	liigutas	liiguta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Part	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	vanikut	vanik+t	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	dobj	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Ujusin	uju+sin	VERB	v-fin/main,indic,impf,ps1,sg,ps,af,.cap,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	kivi	kivi+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	1	nmod	_	_
+3	peale	peale+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	2	case	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Uurijad	uurija+d	NOUN	n/com,pl,nom,.cap	Case=Nom|Number=Plur	2	nsubj	_	_
+2	sõitsid	sõit+sid	VERB	v-fin/main,indic,impf,ps3,pl,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	minema	mine+ma	VERB	v-inf/main,sup,ps,ill,.Intr,.ill,.all	Case=All|VerbForm=Sup	2	compound	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Valasin	vala+sin	VERB	v-fin/main,indic,impf,ps1,sg,ps,af,.cap,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	kisselli	kissell+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	1	dobj	_	_
+3	kaussidesse	kauss+desse	NOUN	n/com,pl,ill	Case=Ill|Number=Plur	1	nmod	_	_
+4	jahtuma	jahtu+ma	VERB	v-inf/main,sup,ps,ill,.Intr	Case=Ill|VerbForm=Sup	1	advcl	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Valge	valge+0	ADJ	adj/pos,sg,nom,.cap	Case=Nom|Degree=Pos|Number=Sing	2	amod	_	_
+2	puusärk	puu-särk+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	3	nsubj	_	_
+3	liikus	liiku+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	läbi	läbi+0	ADP	prp/pre,.gen	AdpType=Prep|Case=Gen	9	case	_	_
+5	puhasvalgesse	puhas-valge+sse	ADJ	adj/pos,sg,ill	Case=Ill|Degree=Pos|Number=Sing	7	amod	_	_
+6	pidulikku	pidu=lik+0	ADJ	adj/pos,sg,adit,.lik	Case=Add|Degree=Pos|Number=Sing	7	amod	_	_
+7	härmatisse	härmatis+se	NOUN	n/com,sg,adit	Case=Add|Number=Sing	8	nmod	_	_
+8	riietatud	riietatud+0	ADJ	adj/pos,.tud	Degree=Pos	9	amod	_	_
+9	Haapsalu	Haap-salu+0	PROPN	prop/prop,sg,gen,.cap	Case=Gen|Number=Sing	3	nmod	_	_
+10	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	Vannitoas	vanni-tuba+s	NOUN	n/com,sg,in,.cap	Case=Ine|Number=Sing	2	nmod	_	_
+2	tilkus	tilku+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kraan	kraan+0	NOUN	n/com,sg,nom	Case=Nom|Number=Sing	2	nsubj	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Vesi	vesi+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	4	nsubj	_	_
+2	liigutas	liiguta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Part	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	4	advcl	_	_
+3	tugevast	tugev+st	ADJ	adj/pos,sg,el	Case=Ela|Degree=Pos|Number=Sing	4	amod	_	_
+4	löögist	löök+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	0	root	_	_
+5	palli	pall+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	4	dobj	_	_
+6	edasi	edasi+0	ADV	adv/--	_	2	compound:prt	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	4	punct	_	_
+
+1	Vihma	vihm+0	NOUN	n/com,sg,part,.cap	Case=Par|Number=Sing	2	nsubj	_	_
+2	tilkus	tilku+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kraest	krae+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+4	sisse	sisse+0	ADV	adv/--	_	2	compound:prt	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Viskusime	visku+sime	VERB	v-fin/main,indic,impf,ps1,pl,ps,af,.cap,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	kaaslasega	kaaslane+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	1	nmod	_	_
+3	võssa	võsa+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	1	nmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Väljusime	välju+sime	VERB	v-fin/main,indic,impf,ps1,pl,ps,af,.cap,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=1|Tense=Imp|VerbForm=Fin	0	root	_	_
+2	keset	keset+0	ADP	prp/pre,.part	AdpType=Prep|Case=Par	3	case	_	_
+3	tormi	torm+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	1	nmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	1	punct	_	_
+
+1	Poiss	poiss+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	andis	and+is	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	korvist	korv+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+4	riidetüki	riide-tükk+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+5	koerale	koer+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+6	nuusutada	nuusuta+da	VERB	v-inf/main,inf,.Part	VerbForm=Inf	2	advcl	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	eemaldas	eemalda+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	ahju	ahi+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+4	kõrvalt	kõrvalt+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	3	case	_	_
+5	parkett-tahvlid	parkett-tahvel+d	NOUN	n/com,pl,nom	Case=Nom|Number=Plur	2	dobj	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	heitis	heit+is	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	ratsmed	ratse+d	NOUN	n/com,pl,nom	Case=Nom|Number=Plur	2	dobj	_	_
+4	hobuse	hobune+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	5	nmod	_	_
+5	seljast	selg+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+6	trepile	trepp+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+7	sulase	sulane+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+8	kätte	kätte+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	7	case	_	_
+9	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Mees	mees+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	hiilis	hiili+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	rada	rada+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	nmod	_	_
+4	mööda	mööda+0	ADP	pst/post,.part	AdpType=Post|Case=Par	3	case	_	_
+5	sauna	saun+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+6	ja	ja+0	CONJ	conj-c/crd	_	5	cc	_	_
+7	küüni	küün+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	5	conj	_	_
+8	vahet	vahet+0	ADP	pst/post	AdpType=Post	5	case	_	_
+9	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Mees	mees+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	hüppas	hüppa+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	sillalt	sild+lt	NOUN	n/com,sg,abl	Case=Abl|Number=Sing	2	nmod	_	_
+4	üle	üle+0	ADP	prp/pre,.gen	AdpType=Prep|Case=Gen	5	case	_	_
+5	käsipuu	käsi-puu+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+6	vette	vesi+tte	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+7	uppujat	uppu=ja+t	NOUN	n/com,sg,part,.ja	Case=Par|Number=Sing	8	dobj	_	_
+8	päästma	pääst+ma	VERB	v-inf/main,sup,ps,ill,.NGP-P	Case=Ill|VerbForm=Sup	2	advcl	_	_
+9	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Läbi	läbi+0	ADP	prp/pre,.cap,.gen	AdpType=Prep|Case=Gen	2	case	_	_
+2	riide	riie+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	3	nmod	_	_
+3	immitseb	immitse+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+4	suitsu	suits+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	3	nsubj	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	jooksis	jooks+is	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kodu	kodu+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+4	vahet	vahet+0	ADP	pst/post	AdpType=Post	3	case	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Koer	koer+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	kaapis	kaapi+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	liiva	liiv+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+4	augu	auk+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Koer	koer+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	kargas	karga+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	pimedast	pime+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+4	Peetri	Peeter+0	PROPN	prop/prop,sg,gen,.cap	Case=Gen|Number=Sing	2	nmod	_	_
+5	kallale	kallale+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	4	case	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	keeras	keera+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	lampi	lamp+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	dobj	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	kerib	keri+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	õngeliini	õnge-liin+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	veest	vesi+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+5	paati	paat+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	kiirustas	kiirusta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	väljumisega	väljumine+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	2	nmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	kuhjas	kuhja+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	mulla	muld+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	aianurka	aia-nurk+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+5	peenrasse	peenar+sse	NOUN	n/com,sg,ill	Case=Ill|Number=Sing	2	nmod	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	käis	käi+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	teiste	teine+te	PRON	pron-def/indef,pl,gen	Case=Gen|Number=Plur|Poss=Yes|PronType=Ind,Neg	2	nmod	_	_
+4	ees	ees+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	3	case	_	_
+5	mööda	mööda+0	ADP	prp/pre,.part	AdpType=Prep|Case=Par	6	case	_	_
+6	rada	rada+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	nmod	_	_
+7	paarsada	paar-sada+0	NUM	num/card,sg,nom,l	Case=Nom|Number=Sing|NumForm=Word|NumType=Card	2	advmod	_	_
+8	meetrit	meeter+t	NOUN	n/com,sg,part	Case=Par|Number=Sing	7	nmod	_	_
+9	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Ost	ost+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	käis	käi+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	isa	isa+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	4	nmod	_	_
+4	rahakoti	raha-kott+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+5	peale	peale+0	ADP	pst/post,.el	AdpType=Post|Case=Ela	4	case	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Laps	laps+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	käänas	kääna+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	aseme	ase+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	segi	segi+0	ADV	adv/--	_	2	advmod	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Mees	mees+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	küürutas	küüruta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	nuga	nuga+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	4	dobj	_	_
+4	võtma	võt+ma	VERB	v-inf/main,sup,ps,ill,.NGP-P	Case=Ill|VerbForm=Sup	2	advcl	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Lind	lind+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	lendas	lenda+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	põllule	põld+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+4	toitu	toit+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	5	dobj	_	_
+5	tooma	too+ma	VERB	v-inf/main,sup,ps,ill,.NGP-P	Case=Ill|VerbForm=Sup	2	advcl	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Madalrõhkkond	madal-rõhkkond+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	liigub	liiku+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	Rootsist	Rootsi+st	PROPN	prop/prop,sg,el,.cap	Case=Ela|Number=Sing	2	nmod	_	_
+4	Soome	Soome+0	PROPN	prop/prop,sg,adit,.cap	Case=Add|Number=Sing	2	nmod	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Matkamine	matkamine+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	lähendab	lähenda+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	loodust	loodus+t	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	dobj	_	_
+4	inimesele	inimene+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	läks	mine+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	mööda	mööda+0	ADP	prp/pre,.part	AdpType=Prep|Case=Par	4	case	_	_
+4	metsateed	metsa-tee+d	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	nmod	_	_
+5	laulmast	laul+mast	VERB	v-inf/main,sup,ps,el	Case=Ela|VerbForm=Sup	2	advcl	_	_
+6	koju	kodu+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+7	puhkama	puhka+ma	VERB	v-inf/main,sup,ps,ill,.Part	Case=Ill|VerbForm=Sup	2	advcl	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Väljarändaja	välja-rändaja+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	naasis	naas+is	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	Ameerikast	Ameerika+st	PROPN	prop/prop,sg,el,.cap	Case=Ela|Number=Sing	2	nmod	_	_
+4	kodumaale	kodu-maa+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	paiskas	paiska+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kivi	kivi+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	seina	sein+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+5	äärest	äärest+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	4	case	_	_
+6	teele	tee+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Spartak	Spartak+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	platseerus	platseeru+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kolmandaks	kolmas+ks	ADJ	adj/ord,sg,tr,l	Case=Tra|Number=Sing|NumForm=Word|NumType=Ord	2	advmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Arno	Arno+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	pöördus	pöördu+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	küsija	küsi=ja+0	NOUN	n/com,sg,gen,.ja	Case=Gen|Number=Sing	2	nmod	_	_
+4	poole	poole+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	3	case	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Rändur	rändur+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	ringles	ringle+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	peamošee	pea-mošee+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+4	ümber	ümber+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	3	case	_	_
+5	kitsaid	kitsas+id	ADJ	adj/pos,pl,part	Case=Par|Degree=Pos|Number=Plur	6	amod	_	_
+6	tänavaid	tänav+id	NOUN	n/com,pl,part	Case=Par|Number=Plur	2	nmod	_	_
+7	mööda	mööda+0	ADP	pst/post,.part	AdpType=Post|Case=Par	6	case	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	rüsis	rüsi+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	vaheruumi	vahe-ruum+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+4	kohvri	kohver+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+5	järele	järele+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	4	case	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Mantlile	mantel+le	NOUN	n/com,sg,all,.cap	Case=All|Number=Sing	2	nmod	_	_
+2	sadas	sada+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	vihma	vihm+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	nsubj	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Rudolf	Rudolf+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	sikutas	sikuta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	saapa	saabas+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	jalast	jalg+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Oja	oja+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	suubub	suubu+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	järve	järv+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	talutas	taluta+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	haige	haige+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	kabinetist	kabinet+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+5	mööda	mööda+0	ADP	prp/pre,.part	AdpType=Prep|Case=Par	6	case	_	_
+6	koridori	koridor+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	nmod	_	_
+7	kööki	köök+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+8	sööma	söö+ma	VERB	v-inf/main,sup,ps,ill,.NGP-P	Case=Ill|VerbForm=Sup	2	advcl	_	_
+9	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Kraan	kraan+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	tilgub	tilku+b	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	vett	vesi+tt	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	dobj	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	torkis	torki+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	voodist	voodi+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+4	sõrmega	sõrm+ga	NOUN	n/com,sg,kom	Case=Com|Number=Sing	2	nmod	_	_
+5	õhku	õhk+0	NOUN	n/com,sg,part	Case=Par|Number=Sing	2	dobj	_	_
+6	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Kõneleja	kõneleja+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	tuli	tule+i	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	tema	tema+0	PRON	pron/sg,gen	Case=Gen|Number=Sing	2	nmod	_	_
+4	juurde	juurde+0	ADP	pst/post,.gen	AdpType=Post|Case=Gen	3	case	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	tõstis	tõst+is	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	liha	liha+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	külalisele	külaline+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+5	taldrikule	taldrik+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+6	jahtuma	jahtu+ma	VERB	v-inf/main,sup,ps,ill,.Intr	Case=Ill|VerbForm=Sup	2	advcl	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Kokk	kokk+0	NOUN	n/com,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	valas	vala+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	kisselli	kissell+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	lastele	laps+tele	NOUN	n/com,pl,all	Case=All|Number=Plur	2	nmod	_	_
+5	potist	pott+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+6	kaussi	kauss+0	NOUN	n/com,sg,adit	Case=Add|Number=Sing	2	nmod	_	_
+7	jahtuma	jahtu+ma	VERB	v-inf/main,sup,ps,ill,.Intr	Case=Ill|VerbForm=Sup	2	advcl	_	_
+8	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	viis	vii+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	käsikirja	käsi-kiri+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	Tallinnasse	Tallinn+sse	PROPN	prop/prop,sg,ill,.cap	Case=Ill|Number=Sing	2	nmod	_	_
+5	juhendajale	juhendaja+le	NOUN	n/com,sg,all	Case=All|Number=Sing	2	nmod	_	_
+6	lugeda	luge+da	VERB	v-inf/main,inf,.NGP-P	VerbForm=Inf	2	advcl	_	_
+7	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peeter	Peeter+0	PROPN	prop/prop,sg,nom,.cap	Case=Nom|Number=Sing	2	nsubj	_	_
+2	viskas	viska+s	VERB	v-fin/main,indic,impf,ps3,sg,ps,af,.FinV,.NGP-P	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+3	mantli	mantel+0	NOUN	n/com,sg,gen	Case=Gen|Number=Sing	2	dobj	_	_
+4	seljast	selg+st	NOUN	n/com,sg,el	Case=Ela|Number=Sing	2	nmod	_	_
+5	.	.	PUNCT	punc/Fst	PunctType=Peri	2	punct	_	_
+
+1	Peetri	Peeter+0	PROPN	prop/prop,sg,gen,.cap	Case=Gen|Number=Sing	2	nmod	_	_
+2	sõõrmed	sõõre+d	NOUN	n/com,pl,nom	Case=Nom|Number=Plur	3	nsubj	_	_
+3	võbelesid	võbele+sid	VERB	v-fin/main,indic,impf,ps3,pl,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Plur|Person=3|Tense=Imp|VerbForm=Fin	0	root	_	_
+4	.	.	PUNCT	punc/Fst	PunctType=Peri	3	punct	_	_
+
+1	mis	mis+0	PRON	pron/inter,sg,nom	Case=Nom|Number=Sing|PronType=Int	7	nmod	_	_
+2	see	see+0	PRON	pron-dem/dem,sg,nom	Case=Nom|Number=Sing|PronType=Dem	7	nsubj	_	_
+3	Marel	Mare+l	PROPN	prop/prop,sg,ad,.cap	Case=Ade|Number=Sing	5	dep	_	_
+4	nagu	nagu+0	PART	b/--	_	5	cc	_	_
+5	Marel	Mare+l	PROPN	prop/prop,sg,ad,.cap	Case=Ade|Number=Sing	7	nmod	_	_
+6	on	ole+0	VERB	v-fin/main,indic,pres,ps3,sg,ps,af,.FinV,.Intr	Mood=Ind|Negative=Pos|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	7	cop	_	_
+7	selline	selline+0	PRON	pron-dem/dem,sg,nom	Case=Nom|Number=Sing|PronType=Dem	0	root	_	_
+8	vä	või+0	PART	b/--	_	7	cc	_	_
+
+1	--	--	PUNCT	x/--	_	0	root	_	_
+

@@ -425,7 +425,6 @@ def tree_decoding_algorithm_content_and_function(s,headrules,reverse=True):
             POS_i = s.node[i]['cpostag']
 
             possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
-            print(POS_i,possible_headsin_table)
 
             if POS_i in RIGHTATTACHING:# ["ADP","DET","AUX","SCONJ"]:
                 H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table and h > i]
@@ -516,6 +515,8 @@ def tree_decoding_algorithm(s,headrules):
 def main():
     parser = argparse.ArgumentParser(description="""Convert conllu to conll format""")
     parser.add_argument('--input', help="conllu file", default='../data/en-ud-dev.conllu')
+    parser.add_argument('--lang')
+
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
     parser.add_argument('--output', help="target file",default="testout.conllu")
     parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='pagerank')
@@ -557,9 +558,9 @@ def main():
                 r = ".rev"
             else:
                 r = ".norev"
-            outfile = Path(args.output +"_"+ "_".join(args.steps)+r+".conllu")
+            outfile = Path(args.lang+"_"+args.output +"_"+ "_".join(args.steps)+r+".conllu")
             cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
-            outfile = Path(args.output)
+            outfile = Path(args.lang+"_"+args.output)
             cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
 
     else:
