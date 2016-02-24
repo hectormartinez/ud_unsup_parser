@@ -18,6 +18,6 @@ do
     cd src
     python udup.py --steps $s --input ../data/orgtok/goldpos/$lang-ud-test.conllu --lang $lang
     cd ..
-    perl eval07.pl -g ../data/orgtok/goldpos/$lang-ud-test.conllu -s src/$lang"_testout.conllu" > "$lang.goldpos.eval"
+    perl eval07.pl -g data/orgtok/goldpos/$lang-ud-test.conllu -s src/$lang"_testout.conllu" > "$lang.goldpos.eval"
 done
 
