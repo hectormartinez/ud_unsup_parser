@@ -15,7 +15,7 @@ OPEN="ADJ ADV INTJ NOUN PROPN VERB".split()
 CLOSED="ADP AUX CONJ DET NUM PART PRON SCONJ".split()
 OTHER="PUNCT SYM X".split()
 
-CONTENT="ADJ NOUN PROPN VERB"
+CONTENT="ADJ NOUN PROPN VERB".split(" ")
 FUNCTION="ADP AUX CONJ DET NUM PART PRON SCONJ PUNCT SYM X ADV".split(" ")
 
 RIGHTATTACHING = []
@@ -46,7 +46,7 @@ def fill_out_left_and_right_attach(bigramcounter):
     RIGHTATTACHING.append("SCONJ")
 
 
-    if bigramcounter[("ADP","NOUN")] +  bigramcounter[("ADP","PROPN")] + bigramcounter[("ADP","PRON")] >  bigramcounter[("NOUN","ADP")] +  bigramcounter[("PROPN","ADP")] +  bigramcounter[("PRON","ADP")]:
+    if  bigramcounter[("ADP","DET")] + bigramcounter[("ADP","NOUN")] +  bigramcounter[("ADP","PROPN")] + bigramcounter[("ADP","PRON")] >  bigramcounter[("DET","ADP")] + bigramcounter[("NOUN","ADP")] +  bigramcounter[("PROPN","ADP")] +  bigramcounter[("PRON","ADP")]:
         RIGHTATTACHING.append("ADP")
     else:
         LEFTATTACHING.append("ADP")
@@ -372,7 +372,7 @@ def add_verb_edges(s):
 
 
 
-def tree_decoding_algorithm_content_and_function(s,headrules,reverse):
+def tree_decoding_algorithm_content_and_function(s,headrules,reverse=True):
     #This is the algorithm in Fig 3 in Søgaard(2012).
 
     personalization = dict([[x,1] for x in s.nodes() if s.node[x]['cpostag'] in CONTENT]+[[x,1] for x in s.nodes() if s.node[x]['cpostag'] not in CONTENT])
@@ -396,6 +396,7 @@ def tree_decoding_algorithm_content_and_function(s,headrules,reverse):
 
     contentindices = [x for x in rankedindices if s.node[x]['cpostag'] in CONTENT]
     functionindices =  [x for x in rankedindices if x not in contentindices]
+    print(contentindices)
     for i in contentindices: #We attach elements from highest to lowest, i.e. the word with the highest PR will be the dependent of root
         if len(H) == 0:
             n_j_prime = 0
@@ -424,6 +425,7 @@ def tree_decoding_algorithm_content_and_function(s,headrules,reverse):
             POS_i = s.node[i]['cpostag']
 
             possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
+            print(POS_i,possible_headsin_table)
 
             if POS_i in RIGHTATTACHING:# ["ADP","DET","AUX","SCONJ"]:
                 H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table and h > i]
@@ -531,10 +533,7 @@ def main():
     ref_treebank = cio.read_conll_u(args.input)
     modif_treebank = []
     posbigramcounter = count_pos_bigrams(orig_treebank)
-    #for p in posbigramcounter.most_common():
-    #    print(p)
-    #exit()
-    p = multiprocessing.Pool(2)
+    fill_out_left_and_right_attach(posbigramcounter)
     if args.parsing_strategy == 'pagerank':
         for o,ref in zip(orig_treebank,ref_treebank):
             s = copy.copy(o)
@@ -559,9 +558,9 @@ def main():
             else:
                 r = ".norev"
             outfile = Path(args.output +"_"+ "_".join(args.steps)+r+".conllu")
-            #cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
             outfile = Path(args.output)
-            #cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
 
     else:
         for s in orig_treebank:
