@@ -10,15 +10,15 @@
 #done
 
 
-postype="predpos"
+postype="goldpos"
 
 
-s='headrule' #'verbs neighbors function headrule' 'verbs neighbors' 'verbs function' 'neighbors' 'verbs' 'function' 'content'
+s='headrule twotags' #'verbs neighbors function headrule' 'verbs neighbors' 'verbs function' 'neighbors' 'verbs' 'function' 'content'
 for lang in 'en' 'ar' 'cu' 'bg' 'cs' 'da' 'de' 'el' 'et' 'es' 'eu' 'fa' 'fi' 'fr' 'ga' 'got' 'grc' 'he' 'hi' 'hr' 'hu' 'id' 'it' 'la' 'nl' 'no' 'pl' 'pt' 'ro' 'sl' 'sv' 'ta'
 do
     cd src
     python udup.py --steps $s --input ../data/orgtok/$postype/$lang-ud-test.conllu.lex --lang $lang
     cd ..
-    perl eval07.pl -g data/orgtok/goldpos/$lang-ud-test.conllu -s src/$lang"_testout.conllu" > "$lang.$postype.eval"
+    perl eval07.pl -g data/orgtok/goldpos/$lang-ud-test.conllu -s src/$lang"_testout.conllu" > "$lang.$2tags.eval"
 done
 
