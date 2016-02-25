@@ -15,14 +15,23 @@ OPEN="ADJ ADV INTJ NOUN PROPN VERB".split()
 CLOSED="ADP AUX CONJ DET NUM PART PRON SCONJ".split()
 OTHER="PUNCT SYM X".split()
 
-CONTENT="ADJ NOUN PROPN VERB".split(" ")
-FUNCTION="ADP AUX CONJ DET NUM PART PRON SCONJ PUNCT SYM X ADV".split(" ")
+CONTENT="ADJ NOUN PROPN VERB CONTENT".split(" ")
+FUNCTION="ADP AUX CONJ DET NUM PART PRON SCONJ PUNCT SYM X ADV FUNCTION".split(" ")
 
 RIGHTATTACHING = []
 LEFTATTACHING = []
 
 scorerdict = defaultdict(list)
 
+
+
+def map_to_two_tags(s,functionlist):
+    for n in s.nodes():
+        if s.node[n]['form'].lower() in functionlist:
+            s.node[n]['cpostag'] = 'FUNCTION'
+        else:
+            s.node[n]['cpostag'] = 'CONTENT'
+    return s
 
 def get_head_direction(sentences):
     D = Counter()
@@ -71,16 +80,20 @@ def get_scores(predset,goldset):
 
 def count_pos_bigrams(treebank):
     C = Counter()
+    W = Counter()
     for s in treebank:
         for n,n_next in zip(s.nodes()[1:],s.nodes()[2:]):
             pos_n = s.node[n]['cpostag']
             pos_n_next = s.node[n_next]['cpostag']
             C[(pos_n,pos_n_next)]+=1
+        for n in s.nodes()[1:]:
+            word_n = s.node[n]['form'].lower()
+            W[word_n]+=1
 
-    return C
+    return C,W
 
 
-def add_high_confidence_edges(s,bigramcount):
+def add_high_confidence_edges(s,bigramcount,backoff):
     pos_index_dict = defaultdict(list)
     T = set()
     D = set()
@@ -271,14 +284,16 @@ def add_high_confidence_edges(s,bigramcount):
     ausgraph.add_nodes_from(list(s.nodes()))
     ausgraph.add_edges_from(D)
 
-
-
-
-
     for n in s.nodes()[1:]:
         if not ausgraph.predecessors(n): # if n has no head
             ausgraph.add_edge(n,n)
     s.remove_edges_from(s.edges())
+
+
+    if ausgraph.successors(0):
+        mainpred = ausgraph.successors(0)[0]
+    else:
+        mainpred = 0
 
     for h,d in ausgraph.edges():
         label = "dep"
@@ -286,7 +301,24 @@ def add_high_confidence_edges(s,bigramcount):
             label = "root"
         elif h == d:
             label = 'backoff'
+            if backoff == 'cycle':
+                h = d
+            elif backoff == 'left':
+                if d == 1:
+                    h = mainpred
+                else:
+                    h = d -1
+            elif backoff == 'right':
+                if d == max(s.nodes()):
+                    h = mainpred
+                else:
+                    h = d + 1
         s.add_edge(h,d,{'deprel' : label})
+
+
+
+
+
     return s
 
 
@@ -520,8 +552,9 @@ def main():
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
     parser.add_argument('--output', help="target file",default="testout.conllu")
     parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='pagerank')
-    parser.add_argument('--steps', choices=['complete','neighbors','verbs','function','content','headrule'], nargs='+', default=[""])
+    parser.add_argument('--steps', choices=['twotags','complete','neighbors','verbs','function','content','headrule'], nargs='+', default=[""])
     parser.add_argument('--reverse', action='store_true',default=True)
+    parser.add_argument('--rule_backoff', choices=['cycle','left','right'],default="left")
     args = parser.parse_args()
 
     if sys.version_info < (3,0):
@@ -533,13 +566,18 @@ def main():
     orig_treebank = cio.read_conll_u(args.input)
     ref_treebank = cio.read_conll_u(args.input)
     modif_treebank = []
-    posbigramcounter = count_pos_bigrams(orig_treebank)
+    posbigramcounter,wordcounter = count_pos_bigrams(orig_treebank)
+    functionlist = [x for x,y in wordcounter.most_common(100)]
+    print(functionlist)
     fill_out_left_and_right_attach(posbigramcounter)
     if args.parsing_strategy == 'pagerank':
         for o,ref in zip(orig_treebank,ref_treebank):
             s = copy.copy(o)
             s.remove_edges_from(s.edges())
             s.remove_node(0) # From here and until tree reconstruction there is no symbolic root node, makes our life a bit easier
+
+            if "twotags" in args.steps:
+                s = map_to_two_tags(s,functionlist)
             if "complete" in args.steps:
                 s = add_all_edges(s)
             if "neighbors" in args.steps:
@@ -565,7 +603,7 @@ def main():
 
     else:
         for s in orig_treebank:
-            s = add_high_confidence_edges(s,posbigramcounter)
+            s = add_high_confidence_edges(s,posbigramcounter,args.rule_backoff)
             modif_treebank.append(s)
 
         for k in sorted(scorerdict.keys()):
