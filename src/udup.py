@@ -315,10 +315,6 @@ def add_high_confidence_edges(s,bigramcount,backoff):
                     h = d + 1
         s.add_edge(h,d,{'deprel' : label})
 
-
-
-
-
     return s
 
 
@@ -350,6 +346,17 @@ def relate_content_words(s):
     return s
 
 
+
+def attach_adjacent(s,direction):
+    s.remove_edges_from(s.edges())
+    if direction == 'left':
+        for n in s.nodes()[1:]:
+            s.add_edge(n-1,n,{'deprel' : 'backoff'})
+    else:
+        s.add_edge(0,s.nodes()[-1],{'deprel' : 'backoff'})
+        for n in s.nodes()[1:-1]:
+            s.add_edge(n+1,n,{'deprel' : 'backoff'})
+    return s
 
 
 
@@ -551,7 +558,7 @@ def main():
 
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
     parser.add_argument('--output', help="target file",default="testout.conllu")
-    parser.add_argument('--parsing_strategy', choices=['rules','pagerank'],default='pagerank')
+    parser.add_argument('--parsing_strategy', choices=['rules','pagerank','adjacent'],default='pagerank')
     parser.add_argument('--steps', choices=['twotags','complete','neighbors','verbs','function','content','headrule'], nargs='+', default=[""])
     parser.add_argument('--reverse', action='store_true',default=True)
     parser.add_argument('--rule_backoff', choices=['cycle','left','right'],default="left")
@@ -600,6 +607,13 @@ def main():
             cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
             outfile = Path(args.lang+"_"+args.output)
             cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+    elif args.parsing_strategy == 'adjacent':
+        for s in orig_treebank:
+            s.remove_edges_from(s.edges())
+            s = attach_adjacent(s,args.rule_backoff)
+            modif_treebank.append(s)
+        outfile = Path(args.output +"."+args.rule_backoff)
+        cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
 
     else:
         for s in orig_treebank:
