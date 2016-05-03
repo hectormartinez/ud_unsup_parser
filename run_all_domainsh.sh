@@ -8,6 +8,6 @@ do
     cd src
     python udup.py --steps $s --input ../data/orgtok/domains/predpos/$domain-ud-test.conllu --lang $domain
     cd ..
-    perl eval07.pl -g data/orgtok/domains/$domain-ud-test.conllu -s src/$domain"_testout.conllu" > "$domain.domainspred.eval"
+    perl eval07.pl -g data/orgtok/domains/org/$domain-ud-test.conllu -s src/$domain"_testout.conllu" > "$domain.domainspred.eval"
 done
 
