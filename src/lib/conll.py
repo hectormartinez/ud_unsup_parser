@@ -66,7 +66,7 @@ class DependencyTree(nx.DiGraph):
 
         #the starting nodes mmm and insertion point n
         for j in self.nodes()[1:n+1]:
-            newsent.add_node(j,attr_dict=self.node[j])
+            newsent.add_node(j,attr_dict=self.nodes[j])
 
             original_head = self.head_of(j)
             adjusted_head = self.head_of(j)
@@ -93,7 +93,7 @@ class DependencyTree(nx.DiGraph):
             else:
                 adjusted_head = original_head
 
-            newsent.add_node(adjusted_node,attr_dict=self.node[j])
+            newsent.add_node(adjusted_node,attr_dict=self.nodes[j])
             newsent.add_edge(adjusted_head,adjusted_node,attr_dict=self[original_head][j])
 
         return newsent
@@ -138,7 +138,7 @@ class DependencyTree(nx.DiGraph):
             else:
                 adjusted_head = head_of_j
 
-            newsent.add_node(adjusted_node,attr_dict=self.node[j])
+            newsent.add_node(adjusted_node,attr_dict=self.nodes[j])
             newsent.add_edge(adjusted_head,adjusted_node,attr_dict=self[head_of_j][j])
 
         return newsent
@@ -148,9 +148,9 @@ class DependencyTree(nx.DiGraph):
         out = []
         for token_i in range(1, max(self.nodes()) + 1):
             if printid:
-                out.append(str(token_i)+":"+self.node[token_i]['form'])
+                out.append(str(token_i)+":"+self.nodes[token_i]['form'])
             else:
-                out.append(self.node[token_i]['form'])
+                out.append(self.nodes[token_i]['form'])
         return u" ".join(out)
 
     def subsumes(self, head, child):
@@ -164,7 +164,7 @@ class DependencyTree(nx.DiGraph):
 
         re_short_vowels = re.compile(r'[\u064B-\u0652]')
         for n in self.nodes():
-            self.node[n]["form"] = re_short_vowels.sub('', self.node[n]["form"])
+            self.nodes[n]["form"] = re_short_vowels.sub('', self.nodes[n]["form"])
 
     def get_highest_index_of_span(self, span):  # retrieves the node index that is closest to root
         #TODO: CANDIDATE FOR DEPRECATION
@@ -183,7 +183,7 @@ class DependencyTree(nx.DiGraph):
     def span_makes_subtree(self, initidx, endidx):
         G = nx.DiGraph()
         span_nodes = list(range(initidx,endidx+1))
-        span_words = [self.node[x]["form"] for x in span_nodes]
+        span_words = [self.nodes[x]["form"] for x in span_nodes]
         G.add_nodes_from(span_nodes)
         for h,d in self.edges():
             if h in span_nodes and d in span_nodes:
@@ -209,7 +209,7 @@ class DependencyTree(nx.DiGraph):
 
         best_rank = len(pos_precedence_list) + 1
         candidate_head = - 1
-        span_upos  = [self.node[x]["cpostag"]for x in highest_nodes_in_span]
+        span_upos  = [self.nodes[x]["cpostag"]for x in highest_nodes_in_span]
         for upos, idx in zip(span_upos,highest_nodes_in_span):
             if pos_precedence_list.index(upos) < best_rank:
                 best_rank = pos_precedence_list.index(upos)
@@ -218,9 +218,9 @@ class DependencyTree(nx.DiGraph):
 
     def _remove_node_properties(self,fields):
         for n in sorted(self.nodes()):
-            for fieldname in self.node[n].keys():
+            for fieldname in self.nodes[n].keys():
                 if fieldname in fields:
-                    self.node[n][fieldname]="_"
+                    self.nodes[n][fieldname]="_"
 
     def _remove_deprel_suffixes(self):
         for h,d in self.edges():
@@ -258,7 +258,7 @@ class DependencyTree(nx.DiGraph):
 
             if spanhead:
                 #Step 1: Replace form of head span (A)  with fusedtoken form  -- in this way we keep the lemma and features if any
-                self.node[spanhead]["form"] = fusedform
+                self.nodes[spanhead]["form"] = fusedform
                 # 2-  Reattach C-level (external dependents) to A
                 #print(fuseform_span,spanhead)
 
@@ -284,7 +284,7 @@ class DependencyTree(nx.DiGraph):
         T = DependencyTree() # Transfer DiGraph, to replace self
 
         for n in sorted(self.nodes()):
-            T.add_node(new_index_dict[n],self.node[n])
+            T.add_node(new_index_dict[n],self.nodes[n])
 
         for h, d in self.edges():
             T.add_edge(new_index_dict[h],new_index_dict[d],deprel=self[h][d]["deprel"])
@@ -294,7 +294,7 @@ class DependencyTree(nx.DiGraph):
         #4B Rewriting the Deptree in Self
         # TODO There must a more elegant way to rewrite self -- self= T for instance?
         for n in sorted(T.nodes()):
-            self.add_node(n,T.node[n])
+            self.add_node(n,T.nodes[n])
 
         for h,d in T.edges():
             self.add_edge(h,d,T[h][d])
@@ -324,7 +324,6 @@ class CoNLLReader(object):
 
     "" "Static properties"""
     CONLL06_COLUMNS = [('id',int), ('form',str), ('lemma',str), ('cpostag',str), ('postag',str), ('feats',str), ('head',int), ('deprel',str), ('phead', str), ('pdeprel',str)]
-    #CONLL06_COLUMNS = ['id', 'form', 'lemma', 'cpostag', 'postag', 'feats', 'head', 'deprel', 'phead', 'pdeprel']
     CONLL06DENSE_COLUMNS = [('id',int), ('form',str), ('lemma',str), ('cpostag',str), ('postag',str), ('feats',str), ('head',int), ('deprel',str), ('edgew',str)]
     CONLL_U_COLUMNS = [('id', parse_id), ('form', str), ('lemma', str), ('cpostag', str),
                    ('postag', str), ('feats', str), ('head', parse_id), ('deprel', str),
@@ -333,8 +332,8 @@ class CoNLLReader(object):
 
 
 
-    def __init__(self):
-        pass
+    def __init__(self, format):
+        self.format = format
 
     def read_conll_2006(self, filename):
         sentences = []
@@ -344,14 +343,16 @@ class CoNLLReader(object):
             if len(parts) in (8, 10):
                 token_dict = {key: conv_fn(val) for (key, conv_fn), val in zip(self.CONLL06_COLUMNS, parts)}
 
-                sent.add_node(token_dict['id'], token_dict)
+                sent.add_node(token_dict['id'])
+                nx.set_node_attributes(sent,{token_dict['id']:token_dict})
                 sent.add_edge(token_dict['head'], token_dict['id'], deprel=token_dict['deprel'])
             elif len(parts) == 0  or (len(parts)==1 and parts[0]==""):
                 sentences.append(sent)
                 sent = DependencyTree()
             else:
                 raise Exception("Invalid input format in line nr: ", line_num, conll_line, filename)
-     
+        if len(sent.nodes()) > 0:
+            sentences.append(sent)
         return sentences
 
     def read_conll_2006_dense(self, filename):
@@ -362,7 +363,8 @@ class CoNLLReader(object):
             if len(parts) == 9:
                 token_dict = {key: conv_fn(val) for (key, conv_fn), val in zip(self.CONLL06DENSE_COLUMNS, parts)}
 
-                sent.add_node(token_dict['id'], token_dict)
+                sent.add_node(token_dict['id'])
+                nx.set_node_attributes(sent,{token_dict['id']:token_dict})
                 sent.add_edge(token_dict['head'], token_dict['id'], deprel=token_dict['deprel'])
             elif len(parts) == 0 or (len(parts)==1 and parts[0]==""):
                 sentences.append(sent)
@@ -370,6 +372,8 @@ class CoNLLReader(object):
             else:
                 raise Exception("Invalid input format in line: ", conll_line, filename)
 
+        if len(sent.nodes()) > 0:
+            sentences.append(sent)
         return sentences
 
 
@@ -389,11 +393,10 @@ class CoNLLReader(object):
                     for c in sent.graph["comment"]:
                         print(c, file=out)
                 for token_i in range(1, max(sent.nodes()) + 1):
-                    token_dict = dict(sent.node[token_i])
+                    token_dict = dict(sent.nodes[token_i])
                     head_i = sent.head_of(token_i)
                     token_dict['head'] = head_i
                     # print(head_i, token_i)
-
                     try:
                         token_dict['deprel'] = sent[head_i][token_i]['deprel']
                         token_dict['id'] = token_i
@@ -408,7 +411,6 @@ class CoNLLReader(object):
                        rowmulti = [str(currentmulti.get(col, '_')) for col in columns]
                        print(u"\t".join(rowmulti),file=out)
                     print(u"\t".join(row), file=out)
-            #print(u"\t".join(row),file=out)
             # emtpy line afterwards
             print(u"", file=out)
 
@@ -424,7 +426,7 @@ class CoNLLReader(object):
                 # Add extra properties to ROOT node if exists
                 if 0 in sent:
                     for key in ('form', 'lemma', 'cpostag', 'postag'):
-                        sent.node[0][key] = 'ROOT'
+                        sent.nodes[0][key] = 'ROOT'
 
                 # Handle multi-tokens
                 sent.graph['multi_tokens'] = multi_tokens
@@ -445,7 +447,7 @@ class CoNLLReader(object):
                 token_dict = {key: conv_fn(val) for (key, conv_fn), val in zip(self.CONLL_U_COLUMNS, parts)}
                 if isinstance(token_dict['id'], int):
                     sent.add_edge(token_dict['head'], token_dict['id'], deprel=token_dict['deprel'])
-                    sent.node[token_dict['id']].update({k: v for (k, v) in token_dict.items()
+                    sent.nodes[token_dict['id']].update({k: v for (k, v) in token_dict.items()
                                                         if k not in ('head', 'id', 'deprel', 'deps')})
                     for head, deprel in token_dict['deps']:
                         sent.add_edge(head, token_dict['id'], deprel=deprel, secondary=True)
@@ -453,4 +455,15 @@ class CoNLLReader(object):
                     #print(token_dict['id'])
                     first_token_id = int(token_dict['id'][0])
                     multi_tokens[first_token_id] = token_dict
+        if len(sent.nodes()) > 0:
+            sentences.append(sent)
         return sentences
+
+    def read_conll(self, filename):
+
+        if self.format == "conllu":
+            return self.read_conll_u(filename=filename)
+        elif self.format == "conll2006":
+            return self.read_conll_2006(filename=filename)
+        else:
+            raise ValueError("Unexpected file format name :",self.format)

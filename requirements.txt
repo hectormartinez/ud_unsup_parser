@@ -1,0 +1,5 @@
+# running on python 3.5 but compatibility with never versions expected
+networkx==2.4
+numpy==1.14.0
+pandas==0.22.0
+pathlib2==2.3.0

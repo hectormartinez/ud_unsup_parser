@@ -1,8 +1,5 @@
 
-
-import multiprocessing
 from collections import defaultdict, Counter
-from itertools import islice
 from pathlib import Path
 import argparse
 import sys, copy
@@ -26,11 +23,11 @@ scorerdict = defaultdict(list)
 
 
 def map_to_two_tags(s,functionlist):
-    for n in s.nodes():
+    for n in list(s.nodes()):
         if s.node[n]['form'].lower() in functionlist:
-            s.node[n]['cpostag'] = 'FUNCTION'
+            s.nodes[n]['cpostag'] = 'FUNCTION'
         else:
-            s.node[n]['cpostag'] = 'CONTENT'
+            s.nodes[n]['cpostag'] = 'CONTENT'
     return s
 
 def get_head_direction(sentences):
@@ -38,11 +35,12 @@ def get_head_direction(sentences):
     for s in sentences:
         for h,d in s.edges():
             if h != 0 and h > d:
-                D[s.node[d]['cpostag']+"_right"]+=1
+                D[s.nodes[d]['cpostag']+"_right"]+=1
             else:
-                D[s.node[d]['cpostag']+"_left"]+=1
+                D[s.nodes[d]['cpostag']+"_left"]+=1
     for k in sorted(D.keys()):
         print(k,D[k])
+
 
 def fill_out_left_and_right_attach(bigramcounter):
     LEFTATTACHING.append("CONJ")
@@ -82,7 +80,7 @@ def count_pos_bigrams(treebank):
     C = Counter()
     W = Counter()
     for s in treebank:
-        for n,n_next in zip(s.nodes()[1:],s.nodes()[2:]):
+        for n,n_next in zip(list(s.nodes()[1:]),list(s.nodes()[2:])):
             pos_n = s.node[n]['cpostag']
             pos_n_next = s.node[n_next]['cpostag']
             C[(pos_n,pos_n_next)]+=1

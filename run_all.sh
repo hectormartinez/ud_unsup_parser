@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 #Best system so far is only headrules
 

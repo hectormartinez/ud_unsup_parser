@@ -1,8 +1,4 @@
-
-
-import multiprocessing
 from collections import defaultdict, Counter
-from itertools import islice
 from pathlib import Path
 import argparse
 import sys, copy
@@ -26,11 +22,11 @@ scorerdict = defaultdict(list)
 
 
 def map_to_two_tags(s,functionlist):
-    for n in s.nodes():
-        if s.node[n]['form'].lower() in functionlist:
-            s.node[n]['cpostag'] = 'FUNCTION'
+    for n in list(s.nodes()):
+        if s.nodes[n]['form'].lower() in functionlist:
+            s.nodes[n]['cpostag'] = 'FUNCTION'
         else:
-            s.node[n]['cpostag'] = 'CONTENT'
+            s.nodes[n]['cpostag'] = 'CONTENT'
     return s
 
 def get_head_direction(sentences):
@@ -38,9 +34,9 @@ def get_head_direction(sentences):
     for s in sentences:
         for h,d in s.edges():
             if h != 0 and h > d:
-                D[s.node[d]['cpostag']+"_right"]+=1
+                D[s.nodes[d]['cpostag']+"_right"]+=1
             else:
-                D[s.node[d]['cpostag']+"_left"]+=1
+                D[s.nodes[d]['cpostag']+"_left"]+=1
     for k in sorted(D.keys()):
         print(k,D[k])
 
@@ -82,12 +78,12 @@ def count_pos_bigrams(treebank):
     C = Counter()
     W = Counter()
     for s in treebank:
-        for n,n_next in zip(s.nodes()[1:],s.nodes()[2:]):
-            pos_n = s.node[n]['cpostag']
-            pos_n_next = s.node[n_next]['cpostag']
+        for n,n_next in zip(list(s.nodes())[1:],list(s.nodes())[2:]):
+            pos_n = s.nodes[n]['cpostag']
+            pos_n_next = s.nodes[n_next]['cpostag']
             C[(pos_n,pos_n_next)]+=1
-        for n in s.nodes()[1:]:
-            word_n = s.node[n]['form'].lower()
+        for n in list(s.nodes())[1:]:
+            word_n = s.nodes[n]['form'].lower()
             W[word_n]+=1
 
     return C,W
@@ -102,18 +98,18 @@ def add_high_confidence_edges(s,bigramcount,backoff):
     verbroot = None
     adjroot = None
 
-    possibleheads = [x for x in s.nodes() if s.node[x]['cpostag'] in OPEN]
+    possibleheads = [x for x in list(s.nodes()) if s.nodes[x]['cpostag'] in OPEN]
     if len(possibleheads) == 1:
         T.add((0,possibleheads[0]))
-        for d in s.nodes():
+        for d in list(s.nodes()):
             if d != 0 and d!= possibleheads[0]:
                 T.add((possibleheads[0],d))
         scorerdict["__shortsentence"].append(get_scores(T,goldedgeset))
         D.update(T)
         T = set()
     else:
-        for n in s.nodes():
-            pos_index_dict[s.node[n]['cpostag']].append(n)
+        for n in list(s.nodes()):
+            pos_index_dict[s.nodes[n]['cpostag']].append(n)
 
 
         for n in pos_index_dict["DET"]:
@@ -271,11 +267,11 @@ def add_high_confidence_edges(s,bigramcount,backoff):
                     scorerdict["PROPN_chain"].append(get_scores(T,goldedgeset))
                     D.update(T)
                     T = set()
-        if s.node[max(s.nodes())]['cpostag'] == 'PUNCT':
+        if s.nodes[max(list(s.nodes()))]['cpostag'] == 'PUNCT':
             if verbroot:
-                T.add((verbroot,max(s.nodes())))
+                T.add((verbroot,max(list(s.nodes()))))
             elif adjroot:
-                T.add((adjroot,max(s.nodes())))
+                T.add((adjroot,max(list(s.nodes()))))
             scorerdict["PUNCT"].append(get_scores(T,goldedgeset))
             T = set()
 
@@ -284,14 +280,14 @@ def add_high_confidence_edges(s,bigramcount,backoff):
     ausgraph.add_nodes_from(list(s.nodes()))
     ausgraph.add_edges_from(D)
 
-    for n in s.nodes()[1:]:
+    for n in list(s.nodes())[1:]:
         if not ausgraph.predecessors(n): # if n has no head
             ausgraph.add_edge(n,n)
-    s.remove_edges_from(s.edges())
+    s.remove_edges_from(list(s.edges()))
 
-
-    if ausgraph.successors(0):
-        mainpred = ausgraph.successors(0)[0]
+    if len(list(ausgraph.successors(0))) > 0:
+        print("LIST",list(ausgraph.successors(0)),len(list(ausgraph.successors(0))))
+        mainpred = list(ausgraph.successors(0))[0]
     else:
         mainpred = 0
 
@@ -309,11 +305,13 @@ def add_high_confidence_edges(s,bigramcount,backoff):
                 else:
                     h = d -1
             elif backoff == 'right':
-                if d == max(s.nodes()):
+                if d == max(list(s.nodes())):
                     h = mainpred
                 else:
                     h = d + 1
-        s.add_edge(h,d,{'deprel' : label})
+        #s.add_edge(h,d,{'deprel' : label})
+        s.add_edge(h,d,deprel= label)
+
 
     return s
 
@@ -324,31 +322,31 @@ def add_high_confidence_edges(s,bigramcount,backoff):
 def add_all_edges(s):
     #connect each word wwith w+1 and w-1
     #this ensures connectedness
-    for h in s.nodes():
-        for d in s.nodes():
+    for h in list(s.nodes()):
+        for d in list(s.nodes()):
             if h != d:
                 s.add_edge(h,d)
     return s
 
 def manage_function_words(s):
     """such as reducing their predisposition to be heads"""
-    for h in [x for x in s.nodes() if s.node[x]['cpostag'] in OPEN]:
-        for d in [x for x in s.nodes()[h-3:h+3] if s.node[x]['cpostag'] in CLOSED]:
+    for h in [x for x in list(s.nodes()) if s.nodes[x]['cpostag'] in OPEN]:
+        for d in [x for x in s.nodes()[h-3:h+3] if s.nodes[x]['cpostag'] in CLOSED]:
             if h != d:
                 s.add_edge(h,d)
     return s
 
 
 def relate_content_words(s):
-    for h in [x for x in s.nodes() if s.node[x]['cpostag'] in OPEN]:
-        for d in [x for x in s.nodes() if s.node[x]['cpostag'] in OPEN and x !=h]:
+    for h in [x for x in list(s.nodes()) if s.nodes[x]['cpostag'] in OPEN]:
+        for d in [x for x in list(s.nodes()) if s.nodes[x]['cpostag'] in OPEN and x !=h]:
              s.add_edge(h,d)
     return s
 
 
 
 def attach_adjacent(s,direction):
-    s.remove_edges_from(s.edges())
+    s.remove_edges_from(list(s.edges()))
     if direction == 'left':
         for n in s.nodes()[1:]:
             s.add_edge(n-1,n,{'deprel' : 'backoff'})
@@ -373,18 +371,18 @@ def add_all_edges(s):
 def add_short_edges(s):
     #connect each word wwith w+1 and w-1
     #this ensures connectedness
-    for n in s.nodes():
-        if n+1 in s.nodes():
+    for n in list(s.nodes()):
+        if n+1 in list(s.nodes()):
             s.add_edge(n+1,n)
-        if n-1 in s.nodes():
+        if n-1 in list(s.nodes()):
             s.add_edge(n-1,n)
     return s
 
 def add_head_rule_edges(s,headrules):
-    for h in s.nodes():
+    for h in list(s.nodes()):
         for d in [x for x in s.nodes() if x!=h]:
-            pos_h = s.node[h]['cpostag']
-            pos_d = s.node[d]['cpostag']
+            pos_h = s.nodes[h]['cpostag']
+            pos_d = s.nodes[d]['cpostag']
             if not headrules[(headrules["head"]==pos_h) & (headrules["dep"]==pos_d)].empty:
                 s.add_edge(h,d)
     return s
@@ -398,8 +396,8 @@ def morphological_inequality():
 def add_verb_edges(s):
     #all words are attached to all VERB-type words
     #we add all nouns to verbs i.e. NOUN and PROPN
-    ALLVERBS = [n for n in s.nodes() if s.node[n]['cpostag']=='VERB']
-    ALLNOUNS = [n for n in s.nodes() if s.node[n]['cpostag']=='NOUN' or s.node[n]['cpostag']=='PROPN' ]
+    ALLVERBS = [n for n in list(s.nodes()) if s.nodes[n]['cpostag']=='VERB']
+    ALLNOUNS = [n for n in list(s.nodes()) if s.nodes[n]['cpostag']=='NOUN' or s.nodes[n]['cpostag']=='PROPN' ]
 
     for n in s.nodes():
         for v in ALLVERBS:
@@ -414,10 +412,10 @@ def add_verb_edges(s):
 def tree_decoding_algorithm_content_and_function(s,headrules,reverse=True):
     #This is the algorithm in Fig 3 in Søgaard(2012).
 
-    personalization = dict([[x,1] for x in s.nodes() if s.node[x]['cpostag'] in CONTENT]+[[x,1] for x in s.nodes() if s.node[x]['cpostag'] not in CONTENT])
+    personalization = dict([[x,1] for x in s.nodes() if s.nodes[x]['cpostag'] in CONTENT]+[[x,1] for x in s.nodes() if s.nodes[x]['cpostag'] not in CONTENT])
 
-    ALLVERBS = sorted([n for n in s.nodes() if s.node[n]['cpostag']=='VERB'])
-    ALLCONTENT = sorted([n for n in s.nodes() if s.node[n]['cpostag'] in CONTENT])
+    ALLVERBS = sorted([n for n in list(s.nodes()) if s.nodes[n]['cpostag']=='VERB'])
+    ALLCONTENT = sorted([n for n in list(s.nodes()) if s.nodes[n]['cpostag'] in CONTENT])
 
     if ALLVERBS:
         personalization[ALLVERBS[0]]=5
@@ -433,17 +431,16 @@ def tree_decoding_algorithm_content_and_function(s,headrules,reverse=True):
     H = set()
     D = set()
 
-    contentindices = [x for x in rankedindices if s.node[x]['cpostag'] in CONTENT]
+    contentindices = [x for x in rankedindices if s.nodes[x]['cpostag'] in CONTENT]
     functionindices =  [x for x in rankedindices if x not in contentindices]
-    print(contentindices)
     for i in contentindices: #We attach elements from highest to lowest, i.e. the word with the highest PR will be the dependent of root
         if len(H) == 0:
             n_j_prime = 0
         else:
             n_j_prime_index_headrules = None
-            POS_i = s.node[i]['cpostag']
+            POS_i = s.nodes[i]['cpostag']
             possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
-            H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table]
+            H_headrules = [h for h in H if s.nodes[h]['cpostag'] in possible_headsin_table]
 
             if H_headrules:
                 n_j_prime_index_headrules = np.argmin([abs(i - j) for j in sorted(H_headrules)]) #find the head of i
@@ -454,23 +451,23 @@ def tree_decoding_algorithm_content_and_function(s,headrules,reverse=True):
                 n_j_prime=sorted(H)[n_j_prime_index]
         D.add((n_j_prime,i))
         H.add(i)
-        s.node[i]['lemma']=str(rankedindices.index(i))
+        s.nodes[i]['feats']="rank:"+str(rankedindices.index(i))
 
     for i in functionindices: #We attach elements from highest to lowest, i.e. the word with the highest PR will be the dependent of root
         if len(H) == 0:
             n_j_prime = 0
         else:
             n_j_prime_index_headrules = None
-            POS_i = s.node[i]['cpostag']
+            POS_i = s.nodes[i]['cpostag']
 
             possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
 
             if POS_i in RIGHTATTACHING:# ["ADP","DET","AUX","SCONJ"]:
-                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table and h > i]
+                H_headrules = [h for h in H if s.nodes[h]['cpostag'] in possible_headsin_table and h > i]
             elif POS_i in LEFTATTACHING:
-                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table and h < i]
+                H_headrules = [h for h in H if s.nodes[h]['cpostag'] in possible_headsin_table and h < i]
             else:
-                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table]
+                H_headrules = [h for h in H if s.nodes[h]['cpostag'] in possible_headsin_table]
 
             if H_headrules:
                 n_j_prime_index_headrules = np.argmin([abs(i - j) for j in sorted(H_headrules)]) #find the head of i
@@ -480,27 +477,27 @@ def tree_decoding_algorithm_content_and_function(s,headrules,reverse=True):
                 n_j_prime_index = np.argmin([abs(i - j) for j in sorted(H)]) #find the head of i
                 n_j_prime=sorted(H)[n_j_prime_index]
         D.add((n_j_prime,i))
-        s.node[i]['lemma']=str(rankedindices.index(i))
+        s.nodes[i]['feats']="rank:"+str(rankedindices.index(i))
 
     s.add_node(0,attr_dict={'form' :'ROOT', 'lemma' :'ROOT', 'cpostag' :'ROOT', 'postag' : 'ROOT'})
-    s.remove_edges_from(s.edges())
+    s.remove_edges_from(list(s.edges()))
     s.add_edges_from(D)
 
 
     #Make sure there are no full 0-attached sentences sentences
 
     mainpred = sorted(s.successors(0))[0]
-    if len(s.successors(0)) > 1:
+    if len(list(s.successors(0))) > 1:
         for other in sorted(s.successors(0))[1:]:
             s.remove_edge(0,other)
             s.add_edge(mainpred,other)
 
-    if s.node[max(s.nodes())]['cpostag'] == 'PUNCT':
-        lastperiod = max(s.nodes())
+    if s.nodes[max(list(s.nodes()))]['cpostag'] == 'PUNCT':
+        lastperiod = max(list(s.nodes()))
         s.remove_edge(s.head_of(lastperiod),lastperiod)
         s.add_edge(mainpred,lastperiod)
 
-    if s.node[1]['cpostag'] == 'PUNCT':
+    if s.nodes[1]['cpostag'] == 'PUNCT':
         s.remove_edge(s.head_of(1),1)
         s.add_edge(mainpred,1)
 
@@ -516,7 +513,7 @@ def tree_decoding_algorithm(s,headrules):
     #This is the algorithm in Fig 3 in Søgaard(2012).
     #TODO reconsider root-attachment after first iteration, it is non-UD
 
-    personalization = dict([[x,1] for x in s.nodes() if s.node[x]['cpostag'] in OPEN]+[[x,1] for x in s.nodes() if s.node[x]['cpostag'] not in OPEN])
+    personalization = dict([[x,1] for x in list(s.nodes()) if s.nodes[x]['cpostag'] in OPEN]+[[x,1] for x in s.nodes() if s.nodes[x]['cpostag'] not in OPEN])
 
     rankdict = nx.pagerank_numpy(s,alpha=0.95,personalization=personalization)
     rankedindices=[k for k,v in Counter(rankdict).most_common()]
@@ -529,9 +526,9 @@ def tree_decoding_algorithm(s,headrules):
         else:
             n_j_prime_index_headrules = None
             if not headrules.empty:
-                POS_i = s.node[i]['cpostag']
+                POS_i = s.nodes[i]['cpostag']
                 possible_headsin_table = list(headrules[headrules['dep']==POS_i]['head'].values)
-                H_headrules = [h for h in H if s.node[h]['cpostag'] in possible_headsin_table]
+                H_headrules = [h for h in H if s.nodes[h]['cpostag'] in possible_headsin_table]
                 if H_headrules:
                     n_j_prime_index_headrules = np.argmin([abs(i - j) for j in sorted(H_headrules)]) #find the head of i
                     n_j_prime=sorted(H_headrules)[n_j_prime_index_headrules]
@@ -540,11 +537,12 @@ def tree_decoding_algorithm(s,headrules):
                     n_j_prime_index = np.argmin([abs(i - j) for j in sorted(H)]) #find the head of i
                     n_j_prime=sorted(H)[n_j_prime_index]
         D.add((n_j_prime,i))
-        if onlycontentheads and s.node[i]['cpostag'] in OPEN: #we only allow content words to be heads
+        onlycontentheads = True
+        if onlycontentheads and s.nodes[i]['cpostag'] in OPEN: #we only allow content words to be heads
             H.add(i)
-        s.node[i]['lemma']=str(rankedindices.index(i))
+        s.nodes[i]['lemma']=str(rankedindices.index(i))
     s.add_node(0,attr_dict={'form' :'ROOT', 'lemma' :'ROOT', 'cpostag' :'ROOT', 'postag' : 'ROOT'})
-    s.remove_edges_from(s.edges())
+    s.remove_edges_from(list(s.edges()))
     s.add_edges_from(D)
 
     for h,d in s.edges():
@@ -554,14 +552,15 @@ def tree_decoding_algorithm(s,headrules):
 def main():
     parser = argparse.ArgumentParser(description="""Convert conllu to conll format""")
     parser.add_argument('--input', help="conllu file", default='../data/en-ud-dev.conllu')
-    parser.add_argument('--lang')
-
+    parser.add_argument('--lang', default="")
     parser.add_argument('--posrules', help="head POS rules file", default='../data/posrules.tsv')
     parser.add_argument('--output', help="target file",default="testout.conllu")
     parser.add_argument('--parsing_strategy', choices=['rules','pagerank','adjacent'],default='pagerank')
     parser.add_argument('--steps', choices=['twotags','complete','neighbors','verbs','function','content','headrule'], nargs='+', default=[""])
     parser.add_argument('--reverse', action='store_true',default=True)
     parser.add_argument('--rule_backoff', choices=['cycle','left','right'],default="left")
+    parser.add_argument('--format', choices=['conll2006','conllu'],default="conllu")
+
     args = parser.parse_args()
 
     if sys.version_info < (3,0):
@@ -569,18 +568,20 @@ def main():
         sys.exit(1)
 
     headrules = pd.read_csv(args.posrules,'\t')
-    cio = CoNLLReader()
-    orig_treebank = cio.read_conll_u(args.input)
-    ref_treebank = cio.read_conll_u(args.input)
+    cio = CoNLLReader(args.format)
+    orig_treebank = cio.read_conll(args.input)
+    ref_treebank = cio.read_conll(args.input)
     modif_treebank = []
     posbigramcounter,wordcounter = count_pos_bigrams(orig_treebank)
     functionlist = [x for x,y in wordcounter.most_common(100)]
     print(functionlist)
+    print("treebank size",len(orig_treebank))
     fill_out_left_and_right_attach(posbigramcounter)
     if args.parsing_strategy == 'pagerank':
         for o,ref in zip(orig_treebank,ref_treebank):
             s = copy.copy(o)
-            s.remove_edges_from(s.edges())
+
+            s.remove_edges_from(list(s.edges()))
             s.remove_node(0) # From here and until tree reconstruction there is no symbolic root node, makes our life a bit easier
 
             if "twotags" in args.steps:
@@ -597,23 +598,21 @@ def main():
                 s = relate_content_words(s)
             if "headrule" in args.steps:
                 s = add_head_rule_edges(s,headrules)
+
             tree_decoding_algorithm_content_and_function(s,headrules,args.reverse)
+
             modif_treebank.append(s)
             if args.reverse:
                 r = ".rev"
             else:
                 r = ".norev"
-            outfile = Path(args.lang+"_"+args.output +"_"+ "_".join(args.steps)+r+".conllu")
-            cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
-            outfile = Path(args.lang+"_"+args.output)
-            cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+        outfile = Path(args.lang+"_"+args.output +"_"+ "_".join(args.steps)+r+".conllu")
     elif args.parsing_strategy == 'adjacent':
         for s in orig_treebank:
             s.remove_edges_from(s.edges())
             s = attach_adjacent(s,args.rule_backoff)
             modif_treebank.append(s)
-        outfile = Path(args.output +"."+args.rule_backoff)
-        cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            outfile = Path(args.output +"."+args.rule_backoff)
 
     else:
         for s in orig_treebank:
@@ -624,8 +623,8 @@ def main():
             prec = sum([p for p,r in scorerdict[k]]) / len(scorerdict[k])
             reca = sum([r for p,r in scorerdict[k]]) / len(scorerdict[k])
             print('{0}, {1:.2f}, {2:.2f}'.format(k, prec, reca))
-        outfile = Path(args.output +".rules")
-        cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
+            outfile = Path(args.output +".rules")
+    cio.write_conll(modif_treebank,outfile,conllformat='conllu', print_fused_forms=False,print_comments=False)
 
 if __name__ == "__main__":
     main()
